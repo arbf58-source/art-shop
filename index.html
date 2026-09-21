@@ -10,7 +10,7 @@
             --gold-light: #f3e5ab;
             --gold-dark: #aa8c2c;
             --bg-deep: #070707;
-            --card-bg: rgba(26, 26, 26, 0.75);
+            --card-bg: rgba(22, 22, 22, 0.8);
             --text-light: #f9f9f9;
             --text-gray: #b8b8b8;
         }
@@ -22,33 +22,50 @@
         body {
             font-family: Tahoma, sans-serif;
             background-color: var(--bg-deep);
-            /* افکت پس‌زمینه حرفه‌ای و مدرن با گرادانت‌های نوری محو */
             background-image: 
-                radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.06) 0%, transparent 40%),
-                linear-gradient(135deg, #050505 0%, #111111 100%);
+                radial-gradient(circle at 10% 15%, rgba(212, 175, 55, 0.09) 0%, transparent 45%),
+                radial-gradient(circle at 90% 85%, rgba(212, 175, 55, 0.07) 0%, transparent 45%),
+                linear-gradient(135deg, #040404 0%, #0e0e0e 100%);
             color: var(--text-light);
-            line-height: 1.8;
+            line-height: 1.9;
             min-height: 100vh;
         }
         header {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(15,15,15,0.8));
-            backdrop-filter: blur(10px);
-            padding: 50px 20px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(12,12,12,0.9));
+            backdrop-filter: blur(12px);
+            padding: 45px 20px;
             text-align: center;
             border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+        }
+        /* طراحی لوگوی شیک و هنری */
+        .logo-container {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 75px;
+            height: 75px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            margin-bottom: 15px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+        .logo-symbol {
+            color: var(--gold);
+            font-size: 2rem;
+            line-height: 1;
         }
         header h1 {
             color: var(--gold);
-            font-size: 2.6rem;
-            margin-bottom: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 8px;
             letter-spacing: 3px;
-            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
+            text-shadow: 0 2px 12px rgba(212, 175, 55, 0.25);
         }
         header p {
             color: var(--gold-light);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-style: italic;
             letter-spacing: 1px;
         }
@@ -57,25 +74,36 @@
             margin: 40px auto;
             padding: 0 20px;
         }
-        .about-section {
-            max-width: 850px;
+        /* بخش معرفی و تبلیغاتی هنری */
+        .promo-banner {
+            max-width: 900px;
             margin: 0 auto 50px auto;
-            padding: 30px;
+            padding: 35px;
             text-align: center;
-            background: rgba(20, 20, 20, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.25);
-            border-radius: 16px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            background: rgba(20, 20, 20, 0.65);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
         }
-        .about-section h2 {
+        .promo-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; width: 4px; height: 100%;
+            background: var(--gold);
+        }
+        .promo-banner h2 {
             color: var(--gold);
-            font-size: 1.5rem;
-            margin-bottom: 12px;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
         }
-        .about-section p {
+        .promo-banner p {
             color: var(--text-gray);
-            font-size: 1rem;
+            font-size: 1.05rem;
+            line-height: 2;
         }
         .section-title {
             color: var(--gold);
@@ -92,33 +120,43 @@
         }
         .product-card {
             background-color: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
             overflow: hidden;
             transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
         .product-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 20px 45px rgba(212, 175, 55, 0.18);
             border-color: rgba(212, 175, 55, 0.5);
         }
         .product-img {
-            background: linear-gradient(145deg, #181818, #222222);
-            height: 200px;
+            background: linear-gradient(145deg, #161616, #202020);
+            height: 190px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: var(--gold);
-            font-size: 1.1rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             text-align: center;
             padding: 20px;
+        }
+        /* اشکال مناسب و وکتوری برای هر محصول */
+        .product-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
+        }
+        .product-img-text {
+            font-size: 1rem;
             font-weight: bold;
+            color: var(--gold-light);
             letter-spacing: 0.5px;
         }
         .product-info {
@@ -128,19 +166,13 @@
         .product-info h3 {
             color: var(--text-light);
             font-size: 1.3rem;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         .product-info p {
             color: var(--text-gray);
             font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-        .price {
-            color: var(--gold);
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
+            margin-bottom: 22px;
+            line-height: 1.8;
         }
         .btn {
             background: linear-gradient(135deg, var(--gold), var(--gold-dark));
@@ -166,7 +198,7 @@
         footer {
             text-align: center;
             padding: 40px;
-            background-color: #030303;
+            background-color: #020202;
             color: var(--text-gray);
             font-size: 0.95rem;
             margin-top: 80px;
@@ -177,89 +209,106 @@
 <body>
 
     <header>
+        <!-- لوگوی اختصاصی لوتوس -->
+        <div class="logo-container">
+            <span class="logo-symbol">🪷</span>
+        </div>
         <h1>گالری لوتوس</h1>
-        <p>تجسم زیبایی، اصالت و هنر دست در دنیای رزین</p>
+        <p>تجسم زیبایی، اصالت و جادوی هنر دست در دنیای رزین</p>
     </header>
 
     <div class="container">
-        <div class="about-section">
-            <h2>✨ درباره آثار لوتوس</h2>
-            <p>تمامی محصولات این گالری با عشق، دقت و به صورت کاملاً **هنر دست (Handmade)** با استفاده از مرغوب‌ترین متریال رزین خلق شده‌اند تا زیبایی و اصالت را به خانه و استایل شما هدیه کنند.</p>
+        <!-- بنر تبلیغاتی و متنی حرفه‌ای درباره ارزش هنر دست -->
+        <div class="promo-banner">
+            <h2>✨ خلق اثر، تجلی اصالت و زیبایی</h2>
+            <p>در دنیای ماشینی امروز، آثار هنری دست‌ساز روح تازه‌ای به فضای زندگی و استایل شما می‌بخشند. تمامی محصولات گالری لوتوس با ظرافت بی‌نظیر، متریال درجه‌یک و طی فرایندی کاملاً هنرمندانه خلق شده‌اند تا هدیه‌ای ماندگار برای شما و عزیزانتان باشند. هر قطعه، داستانی منحصربه‌فرد از ذوق و هنر را روایت می‌کند.</p>
         </div>
 
-        <h2 class="section-title">کلکسیون آثار دست‌ساز</h2>
+        <h2 class="section-title">کلکسیون آثار دست‌ساز و دکوراتیو</h2>
         
         <div class="products-grid">
             <!-- گردنبند -->
             <div class="product-card">
-                <div class="product-img">گردنبند رزینی دست‌ساز</div>
+                <div class="product-img">
+                    <div class="product-icon">💎</div>
+                    <div class="product-img-text">گردنبند رزینی</div>
+                </div>
                 <div class="product-info">
-                    <h3>گردنبند رزینی</h3>
-                    <p>طرح طبیعی و شفاف، کاملاً منحصربه‌فرد و دست‌ساز</p>
-                    <div class="price">۲۸۰,۰۰۰ تومان</div>
-                    <button class="btn" onclick="alert('گردنبند رزینی به سبد خرید اضافه شد.')">افزودن به سبد خرید</button>
+                    <h3>گردنبندهای هنری</h3>
+                    <p>طرح‌های شفاف و طبیعی به همراه ظرافت چشم‌نواز، لمس اصالت هنر دست بر روی تن شما.</p>
+                    <button class="btn" onclick="alert('سفارش یا استعلام قیمت گردنبند رزینی ثبت شد.')">ثبت سفارش / استعلام قیمت</button>
                 </div>
             </div>
 
             <!-- جاکلیدی -->
             <div class="product-card">
-                <div class="product-img">جاکلیدی رزینی فانتزی</div>
+                <div class="product-img">
+                    <div class="product-icon">🔑</div>
+                    <div class="product-img-text">جاکلیدی رزینی</div>
+                </div>
                 <div class="product-info">
-                    <h3>جاکلیدی رزینی</h3>
-                    <p>طراحی مقاوم، سبک و زیبا، هدیه‌ای خاص و هنری</p>
-                    <div class="price">۱۵۰,۰۰۰ تومان</div>
-                    <button class="btn" onclick="alert('جاکلیدی رزینی به سبد خرید اضافه شد.')">افزودن به سبد خرید</button>
+                    <h3>جاکلیدی‌های فانتزی</h3>
+                    <p>کوچک، مقاوم، شیک و رنگارنگ؛ همراهی همیشگی و هدیه‌ای به یادماندنی برای دوستان خاص.</p>
+                    <button class="btn" onclick="alert('سفارش یا استعلام قیمت جاکلیدی رزینی ثبت شد.')">ثبت سفارش / استعلام قیمت</button>
                 </div>
             </div>
 
             <!-- قاب موبایل -->
             <div class="product-card">
-                <div class="product-img">قاب موبایل رزینی</div>
+                <div class="product-img">
+                    <div class="product-icon">📱</div>
+                    <div class="product-img-text">قاب موبایل رزینی</div>
+                </div>
                 <div class="product-info">
-                    <h3>قاب موبایل رزینی</h3>
-                    <p>پوشش رزینی براق، دست‌ساز و محافظ بدنه گوشی</p>
-                    <div class="price">۳۵۰,۰۰۰ تومان</div>
-                    <button class="btn" onclick="alert('قاب موبایل رزینی به سبد خرید اضافه شد.')">افزودن به سبد خرید</button>
+                    <h3>قاب موبایل لوکس</h3>
+                    <p>پوشش محافظ براق، هنرمندانه و کاملاً اختصاصی برای درخشش گوشی هوشمند شما در هر جمعی.</p>
+                    <button class="btn" onclick="alert('سفارش یا استعلام قیمت قاب موبایل رزینی ثبت شد.')">ثبت سفارش / استعلام قیمت</button>
                 </div>
             </div>
 
             <!-- گیره سر -->
             <div class="product-card">
-                <div class="product-img">گیره سر رزینی</div>
+                <div class="product-img">
+                    <div class="product-icon">🎀</div>
+                    <div class="product-img-text">گیره سر رزینی</div>
+                </div>
                 <div class="product-info">
-                    <h3>گیره سر رزینی</h3>
-                    <p>اکسسوری شیک و دست‌ساز مو با طرح‌های جذاب</p>
-                    <div class="price">۱۲۰,۰۰۰ تومان</div>
-                    <button class="btn" onclick="alert('گیره سر رزینی به سبد خرید اضافه شد.')">افزودن به سبد خرید</button>
+                    <h3>اکسسوری مو</h3>
+                    <p>گیره‌ها و زیورآلات ظریف مو با طرح‌های رویایی و جذاب برای تکمیل استایل‌های خاص و متمایز.</p>
+                    <button class="btn" onclick="alert('سفارش یا استعلام قیمت گیره سر رزینی ثبت شد.')">ثبت سفارش / استعلام قیمت</button>
                 </div>
             </div>
 
             <!-- قاب عکس -->
             <div class="product-card">
-                <div class="product-img">قاب عکس رزینی دکوراتیو</div>
+                <div class="product-img">
+                    <div class="product-icon">🖼️</div>
+                    <div class="product-img-text">قاب عکس رزینی</div>
+                </div>
                 <div class="product-info">
-                    <h3>قاب عکس رزینی</h3>
-                    <p>طرح‌های هنری چشم‌نواز برای ثبت زیباترین خاطرات</p>
-                    <div class="price">۴۸۰,۰۰۰ تومان</div>
-                    <button class="btn" onclick="alert('قاب عکس رزینی به سبد خرید اضافه شد.')">افزودن به سبد خرید</button>
+                    <h3>قاب عکس دکوراتیو</h3>
+                    <p>قاب‌های هنری باشکوه برای قاب کردن شیرین‌ترین خاطرات و لبخندهای شما با طراحی قاب رزینی.</p>
+                    <button class="btn" onclick="alert('سفارش یا استعلام قیمت قاب عکس رزینی ثبت شد.')">ثبت سفارش / استعلام قیمت</button>
                 </div>
             </div>
 
             <!-- ساعت -->
             <div class="product-card">
-                <div class="product-img">ساعت دیواری / رومیزی رزینی</div>
+                <div class="product-img">
+                    <div class="product-icon">⏰</div>
+                    <div class="product-img-text">ساعت رزینی</div>
+                </div>
                 <div class="product-info">
-                    <h3>ساعت رزینی</h3>
-                    <p>ساعت لوکس با طرح سنگ و دریا، ساخته شده با دست</p>
-                    <div class="price">۷۵۰,۰۰۰ تومان</div>
-                    <button class="btn" onclick="alert('ساعت رزینی به سبد خرید اضافه شد.')">افزودن به سبد خرید</button>
+                    <h3>ساعت‌های مدرن</h3>
+                    <p>تلفیق هنر رزین با طرح سنگ و امواج دریا؛ نگین درخشان دکوراسیون منزل و محل کار شما.</p>
+                    <button class="btn" onclick="alert('سفارش یا استعلام قیمت ساعت رزینی ثبت شد.')">ثبت سفارش / استعلام قیمت</button>
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>تمامی حقوق محفوظ است | گالری هنر دست لوتوس</p>
+        <p>تمامی حقوق محفوظ است | گالری هنر دست لوتوس ✨</p>
     </footer>
 
 </body>
