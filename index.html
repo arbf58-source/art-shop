@@ -8,10 +8,11 @@
         :root {
             --gold: #d4af37;
             --gold-light: #f3e5ab;
-            --dark: #0a0a0a;
-            --card-bg: #161616;
-            --text-light: #f5f5f5;
-            --text-gray: #b0b0b0;
+            --gold-dark: #aa8c2c;
+            --bg-deep: #070707;
+            --card-bg: rgba(26, 26, 26, 0.75);
+            --text-light: #f9f9f9;
+            --text-gray: #b8b8b8;
         }
         * {
             box-sizing: border-box;
@@ -20,136 +21,156 @@
         }
         body {
             font-family: Tahoma, sans-serif;
-            background-color: var(--dark);
+            background-color: var(--bg-deep);
+            /* افکت پس‌زمینه حرفه‌ای و مدرن با گرادانت‌های نوری محو */
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.06) 0%, transparent 40%),
+                linear-gradient(135deg, #050505 0%, #111111 100%);
             color: var(--text-light);
             line-height: 1.8;
+            min-height: 100vh;
         }
         header {
-            background: linear-gradient(to bottom, #000, #141414);
-            padding: 40px 20px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(15,15,15,0.8));
+            backdrop-filter: blur(10px);
+            padding: 50px 20px;
             text-align: center;
-            border-bottom: 2px solid var(--gold);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         header h1 {
             color: var(--gold);
-            font-size: 2.3rem;
-            margin-bottom: 8px;
-            letter-spacing: 2px;
+            font-size: 2.6rem;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
         }
         header p {
             color: var(--gold-light);
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             font-style: italic;
-        }
-        .about-section {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 20px;
-            text-align: center;
-            background: rgba(212, 175, 55, 0.05);
-            border: 1px dashed var(--gold);
-            border-radius: 10px;
-        }
-        .about-section h2 {
-            color: var(--gold);
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        .about-section p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
+            letter-spacing: 1px;
         }
         .container {
             max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
         }
-        .section-title {
+        .about-section {
+            max-width: 850px;
+            margin: 0 auto 50px auto;
+            padding: 30px;
+            text-align: center;
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+        .about-section h2 {
             color: var(--gold);
             font-size: 1.5rem;
-            margin-bottom: 25px;
+            margin-bottom: 12px;
+        }
+        .about-section p {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+        .section-title {
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin-bottom: 30px;
             border-right: 4px solid var(--gold);
-            padding-right: 12px;
+            padding-right: 15px;
+            letter-spacing: 1px;
         }
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
         .product-card {
             background-color: var(--card-bg);
-            border: 1px solid #2a2a2a;
-            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 16px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
         .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.2);
-            border-color: var(--gold);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.5);
         }
         .product-img {
-            background-color: #1f1f1f;
-            height: 180px;
+            background: linear-gradient(145deg, #181818, #222222);
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--gold);
-            font-size: 1.05rem;
-            border-bottom: 1px solid #2a2a2a;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             text-align: center;
-            padding: 15px;
+            padding: 20px;
             font-weight: bold;
+            letter-spacing: 0.5px;
         }
         .product-info {
-            padding: 20px;
+            padding: 25px;
             text-align: center;
         }
         .product-info h3 {
             color: var(--text-light);
-            font-size: 1.2rem;
-            margin-bottom: 8px;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
         }
         .product-info p {
             color: var(--text-gray);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
         }
         .price {
             color: var(--gold);
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
         }
         .btn {
-            background-color: var(--gold);
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
             color: #000;
             border: none;
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             cursor: pointer;
-            border-radius: 6px;
+            border-radius: 8px;
             font-weight: bold;
-            font-size: 0.95rem;
-            transition: background-color 0.2s, transform 0.1s;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
         }
         .btn:hover {
-            background-color: #e6c547;
+            background: linear-gradient(135deg, #e6c547, var(--gold));
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
         }
         .btn:active {
             transform: scale(0.98);
         }
         footer {
             text-align: center;
-            padding: 30px;
-            background-color: #000;
+            padding: 40px;
+            background-color: #030303;
             color: var(--text-gray);
-            font-size: 0.9rem;
-            margin-top: 60px;
-            border-top: 1px solid #222;
+            font-size: 0.95rem;
+            margin-top: 80px;
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
         }
     </style>
 </head>
