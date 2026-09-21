@@ -3,96 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گالری زیورآلات لوتوس</title>
+    <title>گالری لوتوس | آثار هنری و دست‌ساز رزینی</title>
     <style>
         :root {
-            --primary-gold: #c5a059;
-            --dark-bg: #121212;
-            --card-bg: #1e1e1e;
-            --text-color: #e0e0e0;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --dark: #0a0a0a;
+            --card-bg: #161616;
+            --text-light: #f5f5f5;
+            --text-gray: #b0b0b0;
         }
-        body {
-            font-family: Tahoma, sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-color);
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+        body {
+            font-family: Tahoma, sans-serif;
+            background-color: var(--dark);
+            color: var(--text-light);
+            line-height: 1.8;
+        }
         header {
-            background-color: #000;
+            background: linear-gradient(to bottom, #000, #141414);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+        }
+        header h1 {
+            color: var(--gold);
+            font-size: 2.3rem;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+        header p {
+            color: var(--gold-light);
+            font-size: 1.05rem;
+            font-style: italic;
+        }
+        .about-section {
+            max-width: 800px;
+            margin: 30px auto;
             padding: 20px;
             text-align: center;
-            border-bottom: 2px solid var(--primary-gold);
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px dashed var(--gold);
+            border-radius: 10px;
         }
-        h1 {
-            color: var(--primary-gold);
-            margin: 0;
+        .about-section h2 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .about-section p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
         }
         .container {
             max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            border-right: 4px solid var(--gold);
+            padding-right: 12px;
         }
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 30px;
         }
         .product-card {
             background-color: var(--card-bg);
-            border: 1px solid #333;
-            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.2);
+            border-color: var(--gold);
+        }
+        .product-img {
+            background-color: #1f1f1f;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.05rem;
+            border-bottom: 1px solid #2a2a2a;
+            text-align: center;
             padding: 15px;
+            font-weight: bold;
+        }
+        .product-info {
+            padding: 20px;
             text-align: center;
         }
-        .product-card h3 {
-            color: var(--primary-gold);
+        .product-info h3 {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        .product-info p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        .price {
+            color: var(--gold);
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
         .btn {
-            background-color: var(--primary-gold);
+            background-color: var(--gold);
             color: #000;
             border: none;
-            padding: 10px 15px;
+            width: 100%;
+            padding: 12px;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 6px;
             font-weight: bold;
-            margin-top: 10px;
+            font-size: 0.95rem;
+            transition: background-color 0.2s, transform 0.1s;
         }
         .btn:hover {
-            background-color: #d4af37;
+            background-color: #e6c547;
+        }
+        .btn:active {
+            transform: scale(0.98);
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #000;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-top: 60px;
+            border-top: 1px solid #222;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>گالری زیورآلات لوتوس</h1>
-        <p>فروشگاه آنلاین لوکس‌ترین بدلیجات و لوازم زینتی</p>
+        <h1>گالری لوتوس</h1>
+        <p>تجسم زیبایی، اصالت و هنر دست در دنیای رزین</p>
     </header>
 
     <div class="container">
-        <h2>محصولات پرطرفدار</h2>
+        <div class="about-section">
+            <h2>✨ درباره آثار لوتوس</h2>
+            <p>تمامی محصولات این گالری با عشق، دقت و به صورت کاملاً **هنر دست (Handmade)** با استفاده از مرغوب‌ترین متریال رزین خلق شده‌اند تا زیبایی و اصالت را به خانه و استایل شما هدیه کنند.</p>
+        </div>
+
+        <h2 class="section-title">کلکسیون آثار دست‌ساز</h2>
+        
         <div class="products-grid">
+            <!-- گردنبند -->
             <div class="product-card">
-                <h3>گردنبند </h3>
-                <p>ضد حساسیت</p>
-                <p><strong>۴۵۰,۰۰۰ تومان</strong></p>
-                <button class="btn" onclick="alert('محصول به سبد خرید اضافه شد!')">افزودن به سبد خرید</button>
+                <div class="product-img">گردنبند رزینی دست‌ساز</div>
+                <div class="product-info">
+                    <h3>گردنبند رزینی</h3>
+                    <p>طرح طبیعی و شفاف، کاملاً منحصربه‌فرد و دست‌ساز</p>
+                    <div class="price">۲۸۰,۰۰۰ تومان</div>
+                    <button class="btn" onclick="alert('گردنبند رزینی به سبد خرید اضافه شد.')">افزودن به سبد خرید</button>
+                </div>
             </div>
+
+            <!-- جاکلیدی -->
             <div class="product-card">
-                <h3>دستبند نگین‌دار</h3>
-                <p>طراوت و زیبایی مدرن</p>
-                <p><strong>۳۲۰,۰۰۰ تومان</strong></p>
-                <button class="btn" onclick="alert('محصول به سبد خرید اضافه شد!')">افزودن به سبد خرید</button>
+                <div class="product-img">جاکلیدی رزینی فانتزی</div>
+                <div class="product-info">
+                    <h3>جاکلیدی رزینی</h3>
+                    <p>طراحی مقاوم، سبک و زیبا، هدیه‌ای خاص و هنری</p>
+                    <div class="price">۱۵۰,۰۰۰ تومان</div>
+                    <button class="btn" onclick="alert('جاکلیدی رزینی به سبد خرید اضافه شد.')">افزودن به سبد خرید</button>
+                </div>
             </div>
+
+            <!-- قاب موبایل -->
             <div class="product-card">
-                <h3>گوشواره مجلسی</h3>
-                <p>طرح سلطنتی و شیک</p>
-                <p><strong></strong></p>
-                <button class="btn" onclick="alert('محصول به سبد خرید اضافه شد!')">افزودن به سبد خرید</button>
+                <div class="product-img">قاب موبایل رزینی</div>
+                <div class="product-info">
+                    <h3>قاب موبایل رزینی</h3>
+                    <p>پوشش رزینی براق، دست‌ساز و محافظ بدنه گوشی</p>
+                    <div class="price">۳۵۰,۰۰۰ تومان</div>
+                    <button class="btn" onclick="alert('قاب موبایل رزینی به سبد خرید اضافه شد.')">افزودن به سبد خرید</button>
+                </div>
+            </div>
+
+            <!-- گیره سر -->
+            <div class="product-card">
+                <div class="product-img">گیره سر رزینی</div>
+                <div class="product-info">
+                    <h3>گیره سر رزینی</h3>
+                    <p>اکسسوری شیک و دست‌ساز مو با طرح‌های جذاب</p>
+                    <div class="price">۱۲۰,۰۰۰ تومان</div>
+                    <button class="btn" onclick="alert('گیره سر رزینی به سبد خرید اضافه شد.')">افزودن به سبد خرید</button>
+                </div>
+            </div>
+
+            <!-- قاب عکس -->
+            <div class="product-card">
+                <div class="product-img">قاب عکس رزینی دکوراتیو</div>
+                <div class="product-info">
+                    <h3>قاب عکس رزینی</h3>
+                    <p>طرح‌های هنری چشم‌نواز برای ثبت زیباترین خاطرات</p>
+                    <div class="price">۴۸۰,۰۰۰ تومان</div>
+                    <button class="btn" onclick="alert('قاب عکس رزینی به سبد خرید اضافه شد.')">افزودن به سبد خرید</button>
+                </div>
+            </div>
+
+            <!-- ساعت -->
+            <div class="product-card">
+                <div class="product-img">ساعت دیواری / رومیزی رزینی</div>
+                <div class="product-info">
+                    <h3>ساعت رزینی</h3>
+                    <p>ساعت لوکس با طرح سنگ و دریا، ساخته شده با دست</p>
+                    <div class="price">۷۵۰,۰۰۰ تومان</div>
+                    <button class="btn" onclick="alert('ساعت رزینی به سبد خرید اضافه شد.')">افزودن به سبد خرید</button>
+                </div>
             </div>
         </div>
     </div>
+
+    <footer>
+        <p>تمامی حقوق محفوظ است | گالری هنر دست لوتوس</p>
+    </footer>
 
 </body>
 </html>
