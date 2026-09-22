@@ -1,204 +1,59 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فروشگاه آنلاین من</title>
+    <title>فروشگاه آنلاین</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
         body {
             font-family: Tahoma, Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            padding: 20px;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0;
             direction: rtl;
         }
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        header h1 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        header p {
-            color: #7f8c8d;
-            font-size: 14px;
-        }
-        /* استایل دسته‌بندی‌ها */
-        .categories {
+        h1 { color: #333; margin-bottom: 40px; }
+        .categories-grid {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
+            gap: 30px;
             flex-wrap: wrap;
         }
-        .category-btn {
-            background-color: #ffffff;
-            color: #2c3e50;
-            border: 2px solid #3498db;
-            padding: 8px 18px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        .category-btn:hover, .category-btn.active {
-            background-color: #3498db;
-            color: white;
-        }
-        /* گرید محصولات */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .product-card {
+        .category-card {
             background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-        }
-        .product-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            background-color: #e2e8f0;
-        }
-        .product-info {
-            padding: 15px;
-            text-align: right;
-        }
-        .product-info h3 {
-            font-size: 18px;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-decoration: none;
             color: #2c3e50;
-            margin-bottom: 8px;
-        }
-        .product-code {
-            font-size: 12px;
-            color: #e67e22;
+            font-size: 20px;
             font-weight: bold;
-            margin-bottom: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .product-info p {
-            color: #666;
-            font-size: 13px;
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
-        .buy-btn {
-            background-color: #27ae60;
-            color: white;
-            border: none;
-            padding: 12px;
-            width: 100%;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            transition: background-color 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        .buy-btn:hover {
-            background-color: #219653;
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            background-color: #f8f9fa;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>فروشگاه آنلاین</h1>
-        <p>محصول مورد نظر خود را انتخاب کرده و از طریق واتس‌اپ سفارش دهید</p>
-    </header>
+    <h1>دسته‌بندی محصولات</h1>
 
-    <!-- دکمه‌های دسته‌بندی -->
-    <div class="categories">
-        <button class="category-btn active" onclick="filterCategory('all', this)">همه محصولات</button>
-        <button class="category-btn" onclick="filterCategory('tech', this)">دیجیتال</button>
-        <button class="category-btn" onclick="filterCategory('home', this)">خانه و آشپزخانه</button>
+    <div class="categories-grid">
+        <!-- برای اضافه کردن دسته‌بندی جدید، آدرس 'cat' را تغییر دهید -->
+        <a href="category.html?cat=necklaces" class="category-card">
+            ✨ گردنبندها
+        </a>
+        <a href="category.html?cat=bracelets" class="category-card">
+            💎 دستبندها
+        </a>
+        <a href="category.html?cat=rings" class="category-card">
+            💍 انگشترها
+        </a>
     </div>
-
-    <!-- لیست محصولات -->
-    <div class="products-grid">
-        
-        <!-- محصول اول -->
-        <div class="product-card" data-category="tech">
-            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&auto=format&fit=crop&q=60" alt="گوشی هوشمند" class="product-img">
-            <div class="product-info">
-                <h3>گوشی هوشمند مدل پلاس</h3>
-                <div class="product-code">کد محصول: TECH-01</div>
-                <p>صفحه نمایش باکیفیت، دوربین قدرتمند و باتری با طول عمر بالا مناسب کارهای روزمره.</p>
-            </div>
-            <button class="buy-btn" onclick="sendOrder('گوشی هوشمند مدل پلاس', 'TECH-01')">سفارش از طریق واتس‌اپ</button>
-        </div>
-
-        <!-- محصول دوم -->
-        <div class="product-card" data-category="tech">
-            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop&q=60" alt="لپ‌تاپ مهندسی" class="product-img">
-            <div class="product-info">
-                <h3>لپ‌تاپ مهندسی حرفه‌ای</h3>
-                <div class="product-code">کد محصول: TECH-02</div>
-                <p>مخصوص برنامه‌نویسی، کارهای گرافیکی سنگین و پردازش‌های پردازنده‌محور.</p>
-            </div>
-            <button class="buy-btn" onclick="sendOrder('لپ‌تاپ مهندسی حرفه‌ای', 'TECH-02')">سفارش از طریق واتس‌اپ</button>
-        </div>
-
-        <!-- محصول سوم -->
-        <div class="product-card" data-category="home">
-            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&auto=format&fit=crop&q=60" alt="قهوه‌ساز" class="product-img">
-            <div class="product-info">
-                <h3>قهوه‌ساز خانگی اتوماتیک</h3>
-                <div class="product-code">کد محصول: HOME-01</div>
-                <p>آماده‌سازی سریع انواع قهوه و اسپرسو با عطر و طعم فوق‌العاده در خانه.</p>
-            </div>
-            <button class="buy-btn" onclick="sendOrder('قهوه‌ساز خانگی اتوماتیک', 'HOME-01')">سفارش از طریق واتس‌اپ</button>
-        </div>
-
-    </div>
-
-    <script>
-        // تابع ارسال سفارش به واتس‌اپ
-        function sendOrder(productName, productCode) {
-            const phoneNumber = "00989303102009"; // شماره واتس‌اپ شما
-            const message = `سلام، من می‌خواهم محصول زیر را سفارش دهم:\n\n📦 نام محصول: ${productName}\n🔖 کد محصول: ${productCode}\n\nلطفاً راهنمایی بفرمایید.`;
-            const encodedMessage = encodeURIComponent(message);
-            window.location.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-        }
-
-        // تابع فیلتر کردن دسته‌بندی‌ها
-        function filterCategory(category, buttonElement) {
-            // تغییر حالت فعال دکمه‌ها
-            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
-            buttonElement.classList.add('active');
-
-            // نمایش یا مخفی کردن کارت‌های محصولات
-            const cards = document.querySelectorAll('.product-card');
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
 
 </body>
 </html>
