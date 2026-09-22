@@ -112,7 +112,7 @@
     </header>
 
     <main class="container" id="categories-container">
-        <!-- دسته‌بندی‌ها به صورت دینامیک از اسکریپت بارگذاری می‌شوند -->
+        <!-- دسته‌بندی‌ها به صورت دینامیک بارگذاری می‌شوند -->
     </main>
 
     <footer>
@@ -120,18 +120,6 @@
     </footer>
 
     <script>
-        // همان دیتابیس مشترک برای یکپارچگی اطلاعات
-        const storeData = {
-            'necklaces': { title: '✨ مجموعه‌ گردنبندها', products: [...] },
-            'bracelets': { title: '💎 مجموعه‌ دستبندها', products: [...] },
-            'rings': { title: '💍 مجموعه‌ انگشترها', products: [...] },
-            'accessory': { title: '👑 مجموعه‌ اکسسوری', products: [...] },
-            'keychain': { title: '🔑 مجموعه‌ جا کلیدی', products: [...] },
-            'clock-wall': { title: '🖼️ تابلو و ساعت دیواری', products: [...] },
-            'anklet': { title: '👣 مجموعه‌ پا بند', products: [...] }
-        };
-
-        // برای اینکه کدهای محصولات صفحه کتگوری شلوغ نشود، تعداد را اینجا هندل می‌کنیم یا مستقیم می‌سازیم:
         const categoriesInfo = [
             { key: 'necklaces', title: '✨ مجموعه‌ گردنبندها', count: '۲ محصول' },
             { key: 'bracelets', title: '💎 مجموعه‌ دستبندها', count: '۲ محصول' },
