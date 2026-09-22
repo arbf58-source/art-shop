@@ -3,57 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فروشگاه آنلاین</title>
+    <title>فروشگاه هنر و اکسسوری</title>
     <style>
-        body {
-            font-family: Tahoma, Arial, sans-serif;
-            background-color: #f4f4f9;
-            text-align: center;
-            padding: 50px 20px;
+        :root {
+            --primary-color: #6366f1;
+            --primary-hover: #4f46e5;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            direction: rtl;
+            padding: 0;
+            font-family: Tahoma, sans-serif;
         }
-        h1 { color: #333; margin-bottom: 40px; }
-        .categories-grid {
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
         }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 20px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
         .category-card {
-            background: white;
-            padding: 30px 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
             text-decoration: none;
-            color: #2c3e50;
-            font-size: 20px;
-            font-weight: bold;
-            transition: transform 0.2s, box-shadow 0.2s;
+            color: var(--text-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
         }
+
         .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-            background-color: #f8f9fa;
+            transform: translateY(-4px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.2);
+        }
+
+        .category-card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .category-card p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px 0;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
-    <h1>دسته‌بندی محصولات</h1>
+    <header>
+        <h1>فروشگاه هنر و اکسسوری</h1>
+        <p>لطفاً دسته‌بندی مورد نظر خود را انتخاب کنید</p>
+    </header>
 
-    <div class="categories-grid">
-        <!-- برای اضافه کردن دسته‌بندی جدید، آدرس 'cat' را تغییر دهید -->
-        <a href="category.html?cat=necklaces" class="category-card">
-            ✨ گردنبندها
+    <main class="container">
+        <!-- دسته‌بندی اکسسوری -->
+        <a href="category.html?cat=accessory" class="category-card">
+            <h2>اکسسوری</h2>
+            <p>مشاهده انواع اکسسوری‌های خاص و شیک</p>
         </a>
-        <a href="category.html?cat=bracelets" class="category-card">
-            💎 دستبندها
+
+        <!-- دسته‌بندی جاکلیدی -->
+        <a href="category.html?cat=keychain" class="category-card">
+            <h2>جا کلیدی</h2>
+            <p>جا کلیدی‌های دست‌ساز و فانتزی</p>
         </a>
-        <a href="category.html?cat=rings" class="category-card">
-            💍 انگشترها
+
+        <!-- دسته‌بندی تابلو و ساعت دیواری -->
+        <a href="category.html?cat=clock-wall" class="category-card">
+            <h2>تابلو و ساعت دیواری</h2>
+            <p>تابلوهای هنری و ساعت‌های دیواری مدرن</p>
         </a>
-    </div>
+
+        <!-- دسته‌بندی پابند -->
+        <a href="category.html?cat=anklet" class="category-card">
+            <h2>پا بند</h2>
+            <p>پابندهای زیبا و متنوع</p>
+        </a>
+    </main>
+
+    <footer>
+        <p>تمامی حقوق محفوظ است.</p>
+    </footer>
 
 </body>
 </html>
