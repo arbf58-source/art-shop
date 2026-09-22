@@ -236,8 +236,8 @@
                 title: '👑 مجموعه‌ اکسسوری',
                 products: [
                     { id: 'AC-01', name: 'ست گوشواره و آویز برنزی', image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600' },
-                    { id: 'AC-02', name: 'گل سینه جواهردوزی شده', image: 'https://images.unsplash.com/photo-1617038260897-41a1f14a8cc0?w=600' }
-                    { id: 'Ac-03', name: 'گوشواره', image:'https://image.6A7E6515-C4CC-411D-A167-B56A5477AD30.png'} 
+                    { id: 'AC-02', name: 'گل سینه جواهردوزی شده', image: 'https://images.unsplash.com/photo-1617038260897-41a1f14a8cc0?w=600' },
+                    { id: 'AC-03', name: 'گوشواره', image: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?w=600' } 
                 ]
             },
             'keychain': {
@@ -263,7 +263,7 @@
             }
         };
 
-        const MERCHANT_PHONE = "989030102009"; // شماره شما با پیش‌شماره استاندارد واتساپ
+        const MERCHANT_PHONE = "989030102009";
 
         function renderProducts() {
             const params = new URLSearchParams(window.location.search);
@@ -313,7 +313,6 @@
                 return;
             }
 
-            // پاک کردن کاراکترهای اضافی مانند @، فاصله یا خط فاصله از ورودی کاربر
             phone = phone.replace(/[@\s-]/g, '');
 
             const message = `سلام، درخواست خرید محصول زیر را دارم:\n\n📦 نام محصول: ${productName}\n🔖 کد محصول: ${productId}\n📞 شماره تماس خریدار: ${phone}`;
