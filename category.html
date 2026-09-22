@@ -262,7 +262,7 @@
             }
         };
 
-        const MERCHANT_PHONE = "09030102009";
+        const MERCHANT_PHONE = "989030102009"; // شماره شما با پیش‌شماره استاندارد واتساپ
 
         function renderProducts() {
             const params = new URLSearchParams(window.location.search);
@@ -305,13 +305,18 @@
         }
 
         function sendWhatsApp(productName, productId, inputId) {
-            const phone = document.getElementById(inputId).value.trim();
+            let phone = document.getElementById(inputId).value.trim();
+            
             if(!phone) {
                 alert("لطفاً شماره تماس خود را وارد کنید.");
                 return;
             }
 
+            // پاک کردن کاراکترهای اضافی مانند @، فاصله یا خط فاصله از ورودی کاربر
+            phone = phone.replace(/[@\s-]/g, '');
+
             const message = `سلام، درخواست خرید محصول زیر را دارم:\n\n📦 نام محصول: ${productName}\n🔖 کد محصول: ${productId}\n📞 شماره تماس خریدار: ${phone}`;
+            
             window.open(`https://wa.me/${MERCHANT_PHONE}?text=${encodeURIComponent(message)}`, '_blank');
         }
 
