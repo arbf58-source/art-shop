@@ -3,144 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فروشگاه هنر و اکسسوری - منوی اصلی</title>
+    <title>گالری رزین | اکسسوری‌های لوکس دست‌ساز</title>
+    <!-- Tailwind CSS برای استایل‌دهی سریع و مدرن -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #6366f1;
-            --primary-hover: #4f46e5;
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-color: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Tahoma, sans-serif;
-        }
-
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 30px 20px;
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #FDFBF7; /* رنگ کرم گرم و لوکس */
+            color: #2D2926;
         }
-
-        header {
-            width: 100%;
-            max-width: 1000px;
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
+        .gold-accent {
+            color: #C5A059;
         }
-
-        h1 {
-            font-size: 2rem;
-            color: var(--text-color);
-            margin-bottom: 10px;
+        .gold-bg {
+            background-color: #C5A059;
         }
-
-        p.subtitle {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1000px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .category-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 30px 20px;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-        }
-
-        .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            border-color: var(--primary-color);
-        }
-
-        .category-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .category-count {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 4px 12px;
-            border-radius: 20px;
-        }
-
-        footer {
-            margin-top: auto;
-            padding: 40px 0 10px 0;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            text-align: center;
+        .gold-border {
+            border-color: #C5A059;
         }
     </style>
 </head>
-<body>
+<body class="bg-[#FDFBF7] antialiased selection:bg-[#C5A059] selection:text-white">
 
-    <header>
-        <h1>فروشگاه هنر و اکسسوری</h1>
-        <p class="subtitle">لطفاً برای مشاهده محصولات، دسته‌بندی مورد نظر خود را انتخاب کنید</p>
+    <!-- هدر و منوی ناوبری -->
+    <header class="sticky top-0 z-40 bg-[#FDFBF7]/90 backdrop-blur-md border-b border-[#EFECE6]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <a href="#" class="text-2xl font-bold tracking-wider text-[#2D2926]">LUMIÈRE <span class="text-[#C5A059] text-sm font-normal">رزین گالری</span></a>
+                <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+                    <a href="#hero" class="hover:text-[#C5A059] transition">صفحه اصلی</a>
+                    <a href="#categories" class="hover:text-[#C5A059] transition">دسته‌بندی‌ها</a>
+                    <a href="#products" class="hover:text-[#C5A059] transition">کلکسیون لوکس</a>
+                    <a href="#story" class="hover:text-[#C5A059] transition">داستان ما</a>
+                    <a href="#faq" class="hover:text-[#C5A059] transition">سوالات متداول</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <!-- دکمه باز کردن سبد خرید -->
+                <button onclick="toggleCart()" class="relative p-2 rounded-full hover:bg-gray-100 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#2D2926]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span id="cart-badge" class="absolute top-1 right-1 bg-[#C5A059] text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <main class="container" id="categories-container">
-        <!-- دسته‌بندی‌ها به صورت دینامیک بارگذاری می‌شوند -->
-    </main>
+    <!-- بخش اصلی (Hero Section) -->
+    <section id="hero" class="relative py-24 md:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <span class="text-xs sm:text-sm uppercase tracking-widest text-[#C5A059] font-semibold mb-4 inline-block">دست‌سازه‌های هنری اپوکسی و طلا</span>
+            <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-[#2D2926] mb-6 leading-tight">
+                روایتی از جنس نور، گل و هنر <br>در قاب زرین رزین
+            </h1>
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-gray-600 mb-10">
+                جاودانگی لطافت طبیعت، تلفیق درخشش ورق‌های طلا و بافت‌های شیشه‌ای اپوکسی برای استایل خاص شما.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#products" class="gold-bg text-white px-8 py-3.5 rounded-full font-medium shadow-lg hover:opacity-90 transition">مشاهده کلکسیون</a>
+                <a href="#story" class="border border-[#C5A059] text-[#2D2926] px-8 py-3.5 rounded-full font-medium hover:bg-[#C5A059] hover:text-white transition">داستان کارگاه ما</a>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>تمامی حقوق محفوظ است.</p>
+    <!-- دسته‌بندی‌های اصلی -->
+    <section id="categories" class="py-16 bg-[#F5F0EB]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12 text-[#2D2926]">دسته‌بندی‌های لوکس</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- کتگوری ۱ -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-md bg-white cursor-pointer h-80">
+                    <img src="https://images.unsplash.com/photo-1611591472151-a279c676779b?auto=format&fit=crop&q=80&w=600" alt="آویز لوکس کیف و کلید" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-6">
+                        <h3 class="text-white text-lg font-semibold">آویز لوکس کیف و کلید</h3>
+                    </div>
+                </div>
+                <!-- کتگوری ۲ -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-md bg-white cursor-pointer h-80">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=600" alt="انگشترهای دست‌ساز" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-6">
+                        <h3 class="text-white text-lg font-semibold">انگشترهای دست‌ساز</h3>
+                    </div>
+                </div>
+                <!-- کتگوری ۳ -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-md bg-white cursor-pointer h-80">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&q=80&w=600" alt="پابند و پلاک" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-6">
+                        <h3 class="text-white text-lg font-semibold">پابند و پلاک‌های ظریف</h3>
+                    </div>
+                </div>
+                <!-- کتگوری ۴ -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-md bg-white cursor-pointer h-80">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=600" alt="اکسسوری مو" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-6">
+                        <h3 class="text-white text-lg font-semibold">اکسسوری‌های مو</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش محصولات (Product Grid) -->
+    <section id="products" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-[#2D2926]">کلکسیون منتخب</h2>
+            <p class="text-gray-600 mt-2">قطعاتی منحصر‌به‌فرد که نظیر آن‌ها را جایی نخواهید دید.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- محصول ۱ -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group border border-[#EFECE6]">
+                <div class="overflow-hidden relative h-72">
+                    <img src="https://images.unsplash.com/photo-1611591472151-a279c676779b?auto=format&fit=crop&q=80&w=600" alt="آویز کیف گل رز" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-[#2D2926] mb-1">آویز لوکس کیف مدل رز طلایی</h3>
+                    <p class="text-[#C5A059] font-bold mb-4">۱,۴۵۰,۰۰۰ تومان</p>
+                    <button onclick="addToCart('آویز لوکس کیف مدل رز طلایی', 1450000)" class="w-full bg-[#2D2926] text-white py-2.5 rounded-xl text-sm font-medium hover:bg-[#C5A059] transition">افزودن به سبد خرید</button>
+                </div>
+            </div>
+            <!-- محصول ۲ -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group border border-[#EFECE6]">
+                <div class="overflow-hidden relative h-72">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=600" alt="انگشتر رزین و طلا" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-[#2D2926] mb-1">انگشتر رزینی بافت کهکشان</h3>
+                    <p class="text-[#C5A059] font-bold mb-4">۹۸۰,۰۰۰ تومان</p>
+                    <button onclick="addToCart('انگشتر رزینی بافت کهکشان', 980000)" class="w-full bg-[#2D2926] text-white py-2.5 rounded-xl text-sm font-medium hover:bg-[#C5A059] transition">افزودن به سبد خرید</button>
+                </div>
+            </div>
+            <!-- محصول ۳ -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group border border-[#EFECE6]">
+                <div class="overflow-hidden relative h-72">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&q=80&w=600" alt="پابند رزینی" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-[#2D2926] mb-1">پابند ظریف شکوفه بهاری</h3>
+                    <p class="text-[#C5A059] font-bold mb-4">۸۵۰,۰۰۰ تومان</p>
+                    <button onclick="addToCart('پابند ظریف شکوفه بهاری', 850000)" class="w-full bg-[#2D2926] text-white py-2.5 rounded-xl text-sm font-medium hover:bg-[#C5A059] transition">افزودن به سبد خرید</button>
+                </div>
+            </div>
+            <!-- محصول ۴ -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group border border-[#EFECE6]">
+                <div class="overflow-hidden relative h-72">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=600" alt="گیره مو رزینی" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-[#2D2926] mb-1">گیره موی لوکس برگ و طلا</h3>
+                    <p class="text-[#C5A059] font-bold mb-4">۷۲۰,۰۰۰ تومان</p>
+                    <button onclick="addToCart('گیره موی لوکس برگ و طلا', 720000)" class="w-full bg-[#2D2926] text-white py-2.5 rounded-xl text-sm font-medium hover:bg-[#C5A059] transition">افزودن به سبد خرید</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- داستان برند و کارگاه -->
+    <section id="story" class="py-20 bg-[#F5F0EB]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-xs uppercase tracking-widest text-[#C5A059] font-semibold mb-2 inline-block">داستان ما</span>
+            <h2 class="text-3xl font-bold mb-6 text-[#2D2926]">روایتی از جنس نور، گل و هنر</h2>
+            <p class="text-gray-600 leading-relaxed text-lg mb-6">
+                همه‌چیز از عشق به زیبایی‌های طبیعت و ثبت جاودانه‌ی لحظات شروع شد. در کارگاه ما، هر قطعه رزین تنها یک اکسسوری نیست؛ بلکه روایتی است از لطافت گل‌های خشک‌شده، درخشش ورق‌های طلا و بازی نور در دل شفاف‌ترین بافت‌های اپوکسی.
+            </p>
+            <p class="text-gray-600 leading-relaxed text-base">
+                ما معتقدیم هر بانویی سزاوار داشتن اثری بی‌نظیر و منحصر‌به‌فرد است؛ به همین دلیل، تک‌تک محصولات ما—از آویزهای لوکس کیف و کلید گرفته تا انگشترها و اکسسوری‌های دست‌ساز—با دقت فراوان، حوصله و به صورت کاملاً دست‌ساز خلق می‌شوند تا قطعه‌ای از هنر ناب طبیعت همیشه همراه شما باشد.
+            </p>
+        </div>
+    </section>
+
+    <!-- راهنمای نگهداری و سوالات متداول -->
+    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold mb-6 text-[#2D2926]">راهنمای نگهداری از زیورآلات رزینی</h3>
+                <ul class="space-y-4 text-gray-600 text-sm leading-relaxed">
+                    <li class="flex items-start gap-3">
+                        <span class="text-[#C5A059] font-bold">•</span>
+                        <span><strong>دوری از مواد شیمیایی:</strong> از تماس مستقیم عطر، ادکلن، اسپری مو و شوینده‌های شیمیایی با سطح رزین خودداری کنید.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-[#C5A059] font-bold">•</span>
+                        <span><strong>محافظت در برابر خط و خش:</strong> برای جلوگیری از ایجاد خط و خش، آن‌ها را به صورت جداگانه در کیسه‌های پارچه‌ای نگهداری کنید.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-[#C5A059] font-bold">•</span>
+                        <span><strong>دوری از حرارت مستقیم:</strong> زیورآلات رزینی را در معرض تابش طولانی‌مدت نور خورشید یا اجسام بسیار داغ قرار ندهید.</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-6 text-[#2D2926]">سوالات متداول</h3>
+                <div class="space-y-4">
+                    <details class="bg-white p-4 rounded-xl border border-[#EFECE6] cursor-pointer">
+                        <summary class="font-semibold text-sm text-[#2D2926]">آیا زیورآلات رزینی ضدآب هستند؟</summary>
+                        <p class="text-gray-600 text-sm mt-2">بله، رزین پس از خشک شدن کاملاً ضدآب و مقاوم است، اما برای حفظ شفافیت بهتر است از تماس طولانی با آب جلوگیری شود.</p>
+                    </details>
+                    <details class="bg-white p-4 rounded-xl border border-[#EFECE6] cursor-pointer">
+                        <summary class="font-semibold text-sm text-[#2D2926]">زمان ساخت سفارش‌های اختصاصی چقدر است؟</summary>
+                        <p class="text-gray-600 text-sm mt-2">از آنجایی که تمام قطعات دست‌ساز هستند، فرآیند ساخت و خشک‌شدن کامل حدود ۳ تا ۵ روز کاری زمان می‌برد.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر سایت -->
+    <footer class="bg-[#2D2926] text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-right">
+            <div>
+                <h3 class="text-xl font-bold mb-2">LUMIÈRE RESIN</h3>
+                <p class="text-gray-400 text-sm">تلفیق هنر دست و طبیعت، خلق شده با عشق و دقت.</p>
+            </div>
+            <div class="text-center text-sm text-gray-400">
+                <p>ضمانت اصالت و دست‌ساز بودن تمامی محصولات</p>
+            </div>
+            <div class="flex justify-center md:justify-end gap-4 text-sm text-gray-400">
+                <a href="#" class="hover:text-[#C5A059] transition">اینستاگرام</a>
+                <a href="#" class="hover:text-[#C5A059] transition">تلگرام</a>
+                <a href="#" class="hover:text-[#C5A059] transition">تماس با ما</a>
+            </div>
+        </div>
     </footer>
 
-    <script>
-        const categoriesInfo = [
-            { key: 'necklaces', title: '✨ مجموعه‌ گردنبندها', count: '۲ محصول' },
-            { key: 'bracelets', title: '💎 مجموعه‌ دستبندها', count: '۲ محصول' },
-            { key: 'rings', title: '💍 مجموعه‌ انگشترها', count: '۲ محصول' },
-            { key: 'accessory', title: '👑 مجموعه‌ اکسسوری', count: '۲ محصول' },
-            { key: 'keychain', title: '🔑 مجموعه‌ جا کلیدی', count: '۲ محصول' },
-            { key: 'clock-wall', title: '🖼️ تابلو و ساعت دیواری', count: '۲ محصول' },
-            { key: 'anklet', title: '👣 مجموعه‌ پا بند', count: '۲ محصول' }
-        ];
+    <!-- پنل سبد خرید کشویی (Slide-out Cart) -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black/50 transition-opacity" onclick="toggleCart()"></div>
+        <div class="absolute inset-y-0 left-0 max-w-full flex">
+            <div class="w-screen max-w-md bg-white shadow-xl flex flex-col">
+                <div class="p-6 flex items-center justify-between border-b border-gray-100">
+                    <h2 class="text-lg font-bold text-[#2D2926]">سبد خرید شما</h2>
+                    <button onclick="toggleCart()" class="text-gray-400 hover:text-gray-600 text-xl">&times;</button>
+                </div>
+                <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+                    <!-- محصولات سبد خرید به صورت داینامیک اینجا اضافه میشن -->
+                    <p class="text-gray-500 text-sm text-center py-8">سبد خرید شما خالی است.</p>
+                </div>
+                <div class="p-6 border-t border-gray-100 bg-gray-50">
+                    <div class="flex justify-between mb-4 font-semibold text-[#2D2926]">
+                        <span>مجموع:</span>
+                        <span id="cart-total">۰ تومان</span>
+                    </div>
+                    <button class="w-full gold-bg text-white py-3 rounded-xl font-medium hover:opacity-90 transition">تکمیل خرید و تسویه حساب</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        function renderCategories() {
-            const container = document.getElementById('categories-container');
-            container.innerHTML = categoriesInfo.map(cat => `
-                <a href="category.html?cat=${cat.key}" class="category-card">
-                    <span class="category-title">${cat.title}</span>
-                    <span class="category-count">${cat.count}</span>
-                </a>
-            `).join('');
+    <!-- کدهای جاوااسکریپت برای تعامل سبد خرید -->
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('hidden');
         }
 
-        document.addEventListener('DOMContentLoaded', renderCategories);
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCartUI();
+            toggleCart();
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartBadge = document.getElementById('cart-badge');
+            const cartTotal = document.getElementById('cart-total');
+
+            cartBadge.textContent = cart.length;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-gray-500 text-sm text-center py-8">سبد خرید شما خالی است.</p>';
+                cartTotal.textContent = '۰ تومان';
+                return;
+            }
+
+            let total = 0;
+            cartItemsContainer.innerHTML = '';
+            cart.forEach((item, index) => {
+                total += item.price;
+                cartItemsContainer.innerHTML += `
+                    <div class="flex justify-between items-center bg-gray-50 p-3 rounded-xl border border-gray-100">
+                        <div>
+                            <h4 class="text-sm font-semibold text-[#2D2926]">${item.name}</h4>
+                            <p class="text-xs text-[#C5A059] mt-1">${item.price.toLocaleString()} تومان</p>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-red-400 hover:text-red-600 text-xs">حذف</button>
+                    </div>
+                `;
+            });
+            cartTotal.textContent = total.toLocaleString() + ' تومان';
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
     </script>
 </body>
 </html>
