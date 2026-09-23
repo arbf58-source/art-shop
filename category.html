@@ -3,324 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشاهده دسته‌بندی - فروشگاه هنر و اکسسوری</title>
+    <title>گالری لومیِر - آویز کیف و جاکلیدی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #6366f1;
-            --primary-hover: #4f46e5;
-            --success-color: #22c55e;
-            --success-hover: #16a34a;
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-color: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-            --input-bg: #0f172a;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Tahoma, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-
-        header {
-            width: 100%;
-            max-width: 1000px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 35px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .back-btn {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-size: 0.95rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: color 0.2s;
-        }
-
-        .back-btn:hover {
-            color: var(--primary-hover);
-        }
-
-        h1 {
-            font-size: 1.6rem;
-            color: var(--text-color);
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1000px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .product-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background-color: #334155;
-        }
-
-        .product-info {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .product-title {
-            font-size: 1.15rem;
-            margin-bottom: 8px;
-            color: var(--text-color);
-        }
-
-        .product-code {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 18px;
-            background-color: rgba(255, 255, 255, 0.05);
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            align-self: flex-start;
-        }
-
-        .order-form {
-            margin-top: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .order-form label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .phone-input {
-            width: 100%;
-            padding: 12px;
-            background-color: var(--input-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            color: var(--text-color);
-            font-size: 0.95rem;
-            direction: ltr;
-            text-align: left;
-        }
-
-        .phone-input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-
-        .order-btn {
-            background-color: var(--success-color);
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .order-btn:hover {
-            background-color: var(--success-hover);
-        }
-
-        .not-found {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .not-found h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: #ef4444;
-        }
-
-        .not-found p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        footer {
-            margin-top: auto;
-            padding: 40px 0 20px 0;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            text-align: center;
-        }
+        body { font-family: 'Vazirmatn', sans-serif; }
     </style>
 </head>
-<body>
-
-    <header>
-        <h1 id="category-title">بارگذاری...</h1>
-        <a href="index.html" class="back-btn">← بازگشت به منو</a>
+<body class="bg-gray-50 text-gray-800">
+    <!-- هدر سایت -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-wider text-gray-900">LUMIÈRE</h1>
+            <nav class="space-x-6 space-x-reverse text-sm font-medium">
+                <a href="index.html" class="text-gray-600 hover:text-black">صفحه اصلی</a>
+                <a href="category.html" class="text-black font-semibold">دسته‌بندی‌ها</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="container" id="products-container">
-        <!-- محصولات دینامیک اینجا قرار می‌گیرند -->
+    <!-- بخش محصولات -->
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-center mb-8">آویز کیف و جاکلیدی رزینی</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            
+            <!-- محصول ۱ -->
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3449.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <!-- محصول ۲ -->
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3450.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <!-- محصول ۳ -->
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3451.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <!-- محصول ۴ -->
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3452.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <!-- محصول ۵ -->
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3453.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <!-- محصول ۶ -->
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3454.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <!-- محصول ۷ -->
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3455.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <!-- محصول ۸ -->
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3456.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+                        <!-- محصول ۹ -->
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3457.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <!-- محصول ۱۰ -->
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3458.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <!-- محصول ۱۱ -->
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3460.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <!-- محصول ۱۲ -->
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3462.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+        </div>
     </main>
 
-    <footer>
-        <p>تمامی حقوق محفوظ است.</p>
+    <!-- فوتر سایت -->
+    <footer class="bg-white border-t mt-16 py-6 text-center text-gray-500 text-sm">
+        <p>&copy; 2026 LUMIÈRE Gallery. تمامی حقوق محفوظ است.</p>
     </footer>
-
-    <script>
-        const storeData = {
-            'necklaces': {
-                title: '✨ مجموعه‌ گردنبندها',
-                products: [
-                    { id: 'NK-01', name: 'گردنبند مروارید کلاسیک', image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600' },
-                    { id: 'NK-02', name: 'گردنبند نقره نگین‌دار', image: 'https://images.unsplash.com/photo-1611591967282-3d84f885a4a5?w=600' }
-                ]
-            },
-            'bracelets': {
-                title: '💎 مجموعه‌ دستبندها',
-                products: [
-                    { id: 'BR-01', name: 'دستبند چرم دست‌ساز', image: 'https://images.unsplash.com/photo-1611591967215-cd81881cf46f?w=600' },
-                    { id: 'BR-02', name: 'دستبند کارتیر طلا', image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600' }
-                ]
-            },
-            'rings': {
-                title: '💍 مجموعه‌ انگشترها',
-                products: [
-                    { id: 'RG-01', name: 'انگشتر نامزدی جواهر', image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600' },
-                    { id: 'RG-02', name: 'انگشتر مینیمال نقره', image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600' }
-                ]
-            },
-            'accessory': {
-                title: '👑 مجموعه‌ اکسسوری',
-                products: [
-                    { id: 'AC-01', name: 'ست گوشواره و آویز برنزی', image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600' },
-                    { id: 'AC-02', name: 'گل سینه جواهردوزی شده', image: 'https://images.unsplash.com/photo-1617038260897-41a1f14a8cc0?w=600' },
-                    { id: 'AC-03', name: 'گوشواره', image: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?w=600' } 
-                ]
-            },
-            'keychain': {
-                title: '🔑 مجموعه‌ جا کلیدی',
-                products: [
-                    { id: 'KC-01', name: 'جاکلیدی رزینی طرح کهکشان', image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600' },
-                    { id: 'KC-02', name: 'جاکلیدی چرمی حکاکی‌شده', image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600' }
-                ]
-            },
-            'clock-wall': {
-                title: '🖼️ تابلو و ساعت دیواری',
-                products: [
-                    { id: 'CW-01', name: 'ساعت دیواری مدرن رزینی', image: 'https://images.unsplash.com/photo-1563861214088-7529fa8c1300?w=600' },
-                    { id: 'CW-02', name: 'تابلو دکوراتیو چندتکه', image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=600' }
-                ]
-            },
-            'anklet': {
-                title: '👣 مجموعه‌ پا بند',
-                products: [
-                    { id: 'AN-01', name: 'پابند ظریف نقره زنجیری', image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600' },
-                    { id: 'AN-02', name: 'پابند بافت مهره‌ای رنگی', image: 'https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600' }
-                ]
-            }
-        };
-
-        const MERCHANT_PHONE = "989030102009";
-
-        function renderProducts() {
-            const params = new URLSearchParams(window.location.search);
-            const catKey = params.get('cat');
-            
-            const titleEl = document.getElementById('category-title');
-            const container = document.getElementById('products-container');
-
-            if (catKey && storeData[catKey]) {
-                const category = storeData[catKey];
-                titleEl.textContent = category.title;
-                document.title = `${category.title} - فروشگاه هنر`;
-
-                container.innerHTML = category.products.map(p => `
-                    <div class="product-card">
-                        <img src="${p.image}" alt="${p.name}" class="product-image">
-                        <div class="product-info">
-                            <h3 class="product-title">${p.name}</h3>
-                            <span class="product-code">کد: ${p.id}</span>
-                            
-                            <div class="order-form">
-                                <label for="phone-${p.id}">شماره تماس خود را وارد کنید:</label>
-                                <input type="tel" id="phone-${p.id}" class="phone-input" placeholder="09123456789">
-                                <button class="order-btn" onclick="sendWhatsApp('${p.name}', '${p.id}', 'phone-${p.id}')">
-                                    ثبت سفارش در واتساپ
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                `).join('');
-            } else {
-                titleEl.textContent = "خطا";
-                container.innerHTML = `
-                    <div class="not-found">
-                        <h2>دسته‌بندی پیدا نشد</h2>
-                        <p>آیتم مورد نظر در حال حاضر در دسترس نیست.</p>
-                    </div>
-                `;
-            }
-        }
-
-        function sendWhatsApp(productName, productId, inputId) {
-            let phone = document.getElementById(inputId).value.trim();
-            
-            if(!phone) {
-                alert("لطفاً شماره تماس خود را وارد کنید.");
-                return;
-            }
-
-            phone = phone.replace(/[@\s-]/g, '');
-
-            const message = `سلام، درخواست خرید محصول زیر را دارم:\n\n📦 نام محصول: ${productName}\n🔖 کد محصول: ${productId}\n📞 شماره تماس خریدار: ${phone}`;
-            
-            window.open(`https://wa.me/${MERCHANT_PHONE}?text=${encodeURIComponent(message)}`, '_blank');
-        }
-
-        document.addEventListener('DOMContentLoaded', renderProducts);
-    </script>
 </body>
 </html>
+
