@@ -1,53 +1,160 @@
-<!-- بخش محصولات (Product Grid) -->
-<section id="products" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-[#2D2926]">کلکسیون منتخب</h2>
-        <p class="text-gray-600 mt-2">قطعاتی منحصر‌به‌فرد که نظیر آن‌ها را جایی نخواهید دید.</p>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- محصول ۱ -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group border border-[#EFECE6]">
-            <div class="overflow-hidden relative h-72">
-                <img src="IMG_3448.jpeg" alt="آویز کیف گل رز" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            </div>
-            <div class="p-5">
-                <h3 class="font-semibold text-[#2D2926] mb-1">آویز لوکس کیف مدل رز طلایی</h3>
-                <p class="text-[#C5A059] font-bold mb-4">۱,۴۵۰,۰۰۰ تومان</p>
-                <button onclick="addToCart('آویز لوکس کیف مدل رز طلایی', 1450000)" class="w-full bg-[#2D2926] text-white py-2.5 rounded-xl text-sm font-medium hover:bg-[#C5A059] transition">افزودن به سبد خرید</button>
-            </div>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گالری لومیِر - آویز کیف و جاکلیدی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Vazirmatn', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- هدر سایت -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-wider text-gray-900">LUMIÈRE</h1>
+            
+            <!-- منوی دسکتاپ -->
+            <nav class="hidden md:flex space-x-6 space-x-reverse text-sm font-medium">
+                <a href="index.html" class="text-black font-semibold">صفحه اصلی</a>
+                <a href="category.html" class="text-gray-600 hover:text-black">دسته‌بندی‌ها</a>
+            </nav>
+
+            <!-- دکمه منوی موبایل (همبرگری) -->
+            <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
-        <!-- محصول ۲ -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group border border-[#EFECE6]">
-            <div class="overflow-hidden relative h-72">
-                <img src="IMG_3449.jpeg" alt="انگشتر رزین و طلا" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            </div>
-            <div class="p-5">
-                <h3 class="font-semibold text-[#2D2926] mb-1">انگشتر رزینی بافت کهکشان</h3>
-                <p class="text-[#C5A059] font-bold mb-4">۹۸۰,۰۰۰ تومان</p>
-                <button onclick="addToCart('انگشتر رزینی بافت کهکشان', 980000)" class="w-full bg-[#2D2926] text-white py-2.5 rounded-xl text-sm font-medium hover:bg-[#C5A059] transition">افزودن به سبد خرید</button>
-            </div>
+
+        <!-- منوی کشویی موبایل -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-4 pt-2 pb-4 space-y-2">
+            <a href="index.html" class="block text-black font-semibold py-2">صفحه اصلی</a>
+            <a href="category.html" class="block text-gray-600 hover:text-black py-2">دسته‌بندی‌ها</a>
         </div>
-        <!-- محصول ۳ -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group border border-[#EFECE6]">
-            <div class="overflow-hidden relative h-72">
-                <img src="IMG_3450.jpeg" alt="پابند رزینی" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+    </header>
+
+    <!-- بخش محصولات -->
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-center mb-8">آویز کیف و جاکلیدی رزینی</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            
+            <!-- محصولات -->
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3448.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
             </div>
-            <div class="p-5">
-                <h3 class="font-semibold text-[#2D2926] mb-1">پابند ظریف شکوفه بهاری</h3>
-                <p class="text-[#C5A059] font-bold mb-4">۸۵۰,۰۰۰ تومان</p>
-                <button onclick="addToCart('پابند ظریف شکوفه بهاری', 850000)" class="w-full bg-[#2D2926] text-white py-2.5 rounded-xl text-sm font-medium hover:bg-[#C5A059] transition">افزودن به سبد خرید</button>
+
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3449.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
             </div>
+
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3450.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3451.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3452.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3453.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3454.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3455.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3456.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3457.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3458.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+                <img src="IMG_3460.jpeg" alt="آویز کیف و جاکلیدی" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">مدل رزینی لوکس</h3>
+                    <p class="text-gray-500 text-sm mt-1">دست‌ساز و بی‌نظیر</p>
+                </div>
+            </div>
+
         </div>
-        <!-- محصول ۴ -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group border border-[#EFECE6]">
-            <div class="overflow-hidden relative h-72">
-                <img src="IMG_3451.jpeg" alt="گیره مو رزینی" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            </div>
-            <div class="p-5">
-                <h3 class="font-semibold text-[#2D2926] mb-1">گیره موی لوکس برگ و طلا</h3>
-                <p class="text-[#C5A059] font-bold mb-4">۷۲۰,۰۰۰ تومان</p>
-                <button onclick="addToCart('گیره موی لوکس برگ و طلا', 720000)" class="w-full bg-[#2D2926] text-white py-2.5 rounded-xl text-sm font-medium hover:bg-[#C5A059] transition">افزودن به سبد خرید</button>
-            </div>
-        </div>
-    </div>
-</section>
+    </main>
+
+    <!-- فوتر سایت -->
+    <footer class="bg-white border-t mt-16 py-6 text-center text-gray-500 text-sm">
+        <p>&copy; 2026 LUMIÈRE Gallery. تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <!-- اسکریپت برای باز و بسته شدن منوی موبایل -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
