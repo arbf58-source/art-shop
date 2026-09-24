@@ -15,6 +15,10 @@
         .gold-accent { color: #C5A059; }
         .gold-bg { background-color: #C5A059; }
         .lux-card { background-color: #1E293B; }
+        /* استایل منوی کشویی */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -23,23 +27,38 @@
     <header class="bg-[#0F172A] border-b border-slate-700 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
             <h1 class="text-3xl font-bold tracking-wider gold-accent">LUMIÈRE</h1>
-            <nav class="space-x-8 space-x-reverse text-sm font-medium">
+            <nav class="space-x-8 space-x-reverse text-sm font-medium flex items-center">
                 <a href="index.html" class="hover:text-amber-500 transition">صفحه اصلی</a>
-                <a href="category.html" class="text-amber-500 font-semibold">دسته‌بندی‌ها</a>
+                
+                <!-- منوی آبشاری دسته‌بندی‌ها -->
+                <div class="relative dropdown group">
+                    <button class="text-amber-500 font-semibold transition flex items-center gap-1 focus:outline-none">
+                        دسته‌بندی‌ها 
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="dropdown-menu hidden absolute top-full right-0 w-56 lux-card border border-slate-700 rounded-xl shadow-2xl py-2 mt-2 z-50">
+                        <a href="category.html" class="block px-4 py-3 bg-slate-800 text-amber-500 font-semibold">آویز کیف و جاکلیدی</a>
+                        <a href="#bracelets" class="block px-4 py-3 hover:bg-slate-800 text-slate-300 hover:text-amber-500 transition">دستبند</a>
+                        <a href="#anklets" class="block px-4 py-3 hover:bg-slate-800 text-slate-300 hover:text-amber-500 transition">پابند</a>
+                        <a href="#accessories" class="block px-4 py-3 hover:bg-slate-800 text-slate-300 hover:text-amber-500 transition">اکسسوری</a>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
 
     <!-- محتوای اصلی -->
     <main class="max-w-7xl mx-auto px-4 py-16">
-        <div class="text-center mb-16">
+        <div class="text-center mb-16 relative">
+            <!-- المان تزیینی گل و پروانه -->
+            <div class="text-3xl mb-2 gold-accent animate-pulse">🦋 ✨ 🌸</div>
             <h2 class="text-4xl font-bold mb-4 gold-accent">آویز کیف و جاکلیدی</h2>
             <p class="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed mb-6">
                 هنر دست، زیبایی ماندگار؛ هدیه‌ای بی‌نظیر برای ارزشمندترین افراد زندگی‌تان، خلق‌شده با ظرافت و عشق.
             </p>
             
             <!-- راهنمای قابلیت سفارش‌سازی رنگ و طرح -->
-            <div class="inline-block bg-[#1E293B] border border-amber-500/30 px-6 py-3 rounded-xl text-sm text-slate-300">
+            <div class="inline-block bg-[#1E293B] border border-amber-500/30 px-6 py-3 rounded-xl text-sm text-slate-300 shadow-lg">
                 ✨ امکان سفارش‌سازی اختصاصی: شما می‌توانید رنگ‌بندی و طرح دلخواه خود را برای این محصولات درخواست دهید.
             </div>
         </div>
