@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گالری لومیِر - دسته‌بندی محصولات</title>
+    <title>گالری لومیِر - محصولات</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -15,6 +15,8 @@
         .gold-accent { color: #C5A059; }
         .gold-bg { background-color: #C5A059; }
         .lux-card { background-color: rgba(30, 41, 59, 0.9); backdrop-filter: blur(8px); }
+        .product-section { display: none; }
+        .product-section.active { display: block; }
         .floral-hero-bg {
             background: linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), 
                         url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
@@ -24,7 +26,7 @@
 </head>
 <body>
 
-    <!-- هدر سایت (بدون منوی آبشاری و بدون گزینه درباره ما) -->
+    <!-- هدر سایت (بدون منوی آبشاری و بدون درباره ما) -->
     <header class="bg-[#0F172A]/90 border-b border-slate-700 sticky top-0 z-50 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold tracking-wider gold-accent flex items-center gap-2">
@@ -36,7 +38,7 @@
         </div>
     </header>
 
-    <!-- بخش بالایی با پس‌زمینه باغ گل و پروانه -->
+    <!-- بخش بالایی -->
     <div class="floral-hero-bg py-20 px-4 text-center border-b border-slate-800">
         <div class="max-w-4xl mx-auto relative">
             <span class="inline-block text-4xl mb-3 animate-bounce">🦋 ✨ 🌸</span>
@@ -44,7 +46,7 @@
                 محصولات گالری لومیِر
             </h2>
             <p class="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed drop-shadow">
-                تلفیقی رویایی از گل‌های طبیعی، پروانه‌های خیال‌انگیز و هنر دست‌ساز رزین؛ خلق زیبایی ماندگار در استایل شما.
+                تلفیقی رویایی از گل‌های طبیعی، پروانه‌های خیال‌انگیز و هنر دست‌ساز رزین.
             </p>
         </div>
     </div>
@@ -52,8 +54,8 @@
     <!-- محتوای اصلی محصولات -->
     <main class="max-w-7xl mx-auto px-4 py-16">
         
-        <!-- بخش گوشواره (دارای عکس B56A5477AD30.png) -->
-        <section id="earrings" class="mb-28 scroll-mt-28">
+        <!-- ۱. بخش گوشواره -->
+        <section id="earrings" class="product-section mb-28">
             <div class="text-center mb-16 relative">
                 <h2 class="text-4xl font-bold mb-4 gold-accent flex justify-center items-center gap-2">
                     <span>🦋</span> گوشواره‌های رزینی <span>🌸</span>
@@ -61,79 +63,73 @@
                 <p class="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed mb-6">
                     جلوه‌ای خاص و درخشان با گوشواره‌های دست‌ساز، تلفیقی از هنر، ظرافت و طبیعت.
                 </p>
-                <div class="inline-block bg-[#1E293B] border border-amber-500/30 px-6 py-3 rounded-xl text-sm text-slate-300 shadow-lg">
-                    ✨ امکان سفارش‌سازی اختصاصی: شما می‌توانید رنگ‌بندی و طرح دلخواه خود را برای این محصولات درخواست دهید.
-                </div>
             </div>
-
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
+                <div class="lux-card rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
                     <div class="overflow-hidden relative h-96">
-                        <img src="B56A5477AD30.png" alt="گوشواره رزینی لومیِر" class="w-full h-full object-cover">
+                        <img src="B56A5477AD30.png" alt="گوشواره رزینی" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <h3 class="font-bold text-xl mb-2 gold-accent">گوشواره رزینی دست‌ساز</h3>
                         <p class="text-slate-400 text-sm mb-6">ظریف و منحصربه‌فرد، قابل سفارش با رنگ‌بندی دلخواه شما.</p>
-                        <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20گوشواره%20رزینی%20با%20رنگ%20و%20طرح%20دلخواه%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
+                        <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20گوشواره%20رزینی%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- بخش ساعت و قاب -->
-        <section id="clocks-frames" class="mb-28 scroll-mt-28">
+        <!-- ۲. بخش ساعت و قاب -->
+        <section id="clocks-frames" class="product-section mb-28">
             <div class="text-center mb-16 relative">
                 <h2 class="text-4xl font-bold mb-4 gold-accent">ساعت و قاب رزینی</h2>
                 <p class="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed mb-6">
                     طراحی لوکس ساعت‌ها و قاب‌های دکوراتیو با الهام از طراوت باغ گل و رقص پروانه‌ها.
                 </p>
             </div>
-
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
+                <div class="lux-card rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
                     <div class="overflow-hidden relative h-96">
-                        <img src="IMG_3459.jpeg" alt="ساعت و قاب رزینی لومیِر" class="w-full h-full object-cover">
+                        <img src="IMG_3459.jpeg" alt="ساعت و قاب رزینی" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <h3 class="font-bold text-xl mb-2 gold-accent">ساعت / قاب دکوراتیو رزینی</h3>
-                        <p class="text-slate-400 text-sm mb-6">شاهکار دست‌ساز با طرح گل و پروانه، هدیه‌ای بی‌نظیر برای فضاها.</p>
-                        <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20ساعت%20و%20قاب%20رزینی%20با%20رنگ%20و%20طرح%20دلخواه%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
+                        <p class="text-slate-400 text-sm mb-6">شاهکار دست‌ساز با طرح گل و پروانه.</p>
+                        <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20ساعت%20و%20قاب%20رزینی%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- بخش آویز کیف و جاکلیدی (دارای تصاویر IMG_3448.jpeg تا IMG_3460.jpeg) -->
-        <section id="bag-charms" class="mb-28 scroll-mt-28">
+        <!-- ۳. بخش آویز کیف و جاکلیدی -->
+        <section id="bag-charms" class="product-section mb-28">
             <div class="text-center mb-16 relative">
                 <h2 class="text-4xl font-bold mb-4 gold-accent">آویز کیف و جاکلیدی</h2>
                 <p class="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed mb-6">
-                    هنر دست، زیبایی ماندگار؛ هدیه‌ای بی‌نظیر برای ارزشمندترین افراد زندگی‌تان، خلق‌شده با ظرافت و عشق.
+                    هنر دست، زیبایی ماندگار؛ هدیه‌ای بی‌نظیر برای ارزشمندترین افراد زندگی‌تان.
                 </p>
             </div>
-
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
+                <div class="lux-card rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
                     <div class="overflow-hidden relative h-96"><img src="IMG_3448.jpeg" alt="آویز کیف" class="w-full h-full object-cover"></div>
                     <div class="p-8">
                         <h3 class="font-bold text-xl mb-2 gold-accent">آویز کیف و جاکلیدی رزینی</h3>
-                        <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر، قابل سفارش با رنگ‌بندی دلخواه شما.</p>
+                        <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر.</p>
                         <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20آویز%20کیف%20و%20جاکلیدی%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
                     </div>
                 </div>
-                <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
+                <div class="lux-card rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
                     <div class="overflow-hidden relative h-96"><img src="IMG_3449.jpeg" alt="آویز کیف" class="w-full h-full object-cover"></div>
                     <div class="p-8">
                         <h3 class="font-bold text-xl mb-2 gold-accent">آویز کیف و جاکلیدی رزینی</h3>
-                        <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر، قابل سفارش با رنگ‌بندی دلخواه شما.</p>
+                        <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر.</p>
                         <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20آویز%20کیف%20و%20جاکلیدی%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
                     </div>
                 </div>
-                <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
+                <div class="lux-card rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
                     <div class="overflow-hidden relative h-96"><img src="IMG_3451.jpeg" alt="آویز کیف" class="w-full h-full object-cover"></div>
                     <div class="p-8">
                         <h3 class="font-bold text-xl mb-2 gold-accent">آویز کیف و جاکلیدی رزینی</h3>
-                        <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر، قابل سفارش با رنگ‌بندی دلخواه شما.</p>
+                        <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر.</p>
                         <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20آویز%20کیف%20و%20جاکلیدی%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
                     </div>
                 </div>
@@ -141,6 +137,24 @@
         </section>
 
     </main>
+
+    <!-- اسکریپت هوشمند برای نمایش دقیق همان دسته‌بندی انتخاب‌شده -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const sectionParam = urlParams.get('section');
+            
+            if (sectionParam) {
+                const targetSection = document.getElementById(sectionParam);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+            } else {
+                // اگر از دکمه «مشاهده تمام محصولات» وارد شده بود، همه بخش‌ها نمایش داده شوند
+                document.querySelectorAll('.product-section').forEach(sec => sec.classList.add('active'));
+            }
+        });
+    </script>
 
     <!-- فوتر -->
     <footer class="bg-[#0F172A] border-t border-slate-700 mt-24 py-12 text-center text-slate-500 text-sm">
