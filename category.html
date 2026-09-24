@@ -3,234 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گالری لومیِر - آویز کیف و جاکلیدی</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>دسته‌بندی محصولات</title>
     <style>
-        body { 
-            font-family: 'Vazirmatn', sans-serif; 
-            background-color: #0F172A; 
-            color: #F8FAFC;
-        }
-        .gold-accent { color: #C5A059; }
-        .gold-bg { background-color: #C5A059; }
-        .lux-card { background-color: #1E293B; }
-        /* استایل منوی کشویی */
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
+        body { font-family: Tahoma, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; text-align: right; }
+        header { background-color: #333; color: #fff; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
+        nav ul li { position: relative; margin-right: 20px; }
+        nav ul li a { color: #fff; text-decoration: none; padding: 10px; display: block; }
+        .dropdown-content { display: none; position: absolute; background-color: #444; min-width: 160px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 1; right: 0; }
+        .dropdown-content a { color: #fff; padding: 12px 16px; text-decoration: none; display: block; }
+        .dropdown-content a:hover { background-color: #555; }
+        nav ul li:hover .dropdown-content { display: block; }
+        
+        .container { padding: 20px; max-width: 1000px; margin: auto; }
+        .section { display: none; margin-bottom: 40px; }
+        .section.active { display: block; }
+        .grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start; }
+        .card { background: #fff; border: 1px solid #ddd; padding: 15px; width: 220px; text-align: center; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .card img { max-width: 100%; height: 180px; object-fit: cover; border-radius: 4px; }
+        h2 { border-bottom: 2px solid #ccc; padding-bottom: 10px; color: #333; }
     </style>
 </head>
 <body>
 
-    <!-- هدر سایت -->
-    <header class="bg-[#0F172A] border-b border-slate-700 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
-            <h1 class="text-3xl font-bold tracking-wider gold-accent">LUMIÈRE</h1>
-            <nav class="space-x-8 space-x-reverse text-sm font-medium flex items-center">
-                <a href="index.html" class="hover:text-amber-500 transition">صفحه اصلی</a>
-                
-                <!-- منوی آبشاری دسته‌بندی‌ها -->
-                <div class="relative dropdown group">
-                    <button class="text-amber-500 font-semibold transition flex items-center gap-1 focus:outline-none">
-                        دسته‌بندی‌ها 
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="dropdown-menu hidden absolute top-full right-0 w-56 lux-card border border-slate-700 rounded-xl shadow-2xl py-2 mt-2 z-50">
-                        <a href="category.html" class="block px-4 py-3 bg-slate-800 text-amber-500 font-semibold">آویز کیف و جاکلیدی</a>
-                        <a href="#bracelets" class="block px-4 py-3 hover:bg-slate-800 text-slate-300 hover:text-amber-500 transition">دستبند</a>
-                        <a href="#anklets" class="block px-4 py-3 hover:bg-slate-800 text-slate-300 hover:text-amber-500 transition">پابند</a>
-                        <a href="#accessories" class="block px-4 py-3 hover:bg-slate-800 text-slate-300 hover:text-amber-500 transition">اکسسوری</a>
+    <header>
+        <h2>فروشگاه ما</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">صفحه اصلی</a></li>
+                <li>
+                    <a href="category.html">دسته‌بندی‌ها ▾</a>
+                    <div class="dropdown-content">
+                        <a href="category.html?cat=keychain" onclick="showCategory('keychain')">جاکلیدی و آویز کیف</a>
+                        <a href="category.html?cat=earring" onclick="showCategory('earring')">گوشواره</a>
                     </div>
-                </div>
-            </nav>
-        </div>
+                </li>
+                <li><a href="#">درباره ما</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- محتوای اصلی -->
-    <main class="max-w-7xl mx-auto px-4 py-16">
-        <div class="text-center mb-16 relative">
-            <!-- المان تزیینی گل و پروانه -->
-            <div class="text-3xl mb-2 gold-accent animate-pulse">🦋 ✨ 🌸</div>
-            <h2 class="text-4xl font-bold mb-4 gold-accent">آویز کیف و جاکلیدی</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed mb-6">
-                هنر دست، زیبایی ماندگار؛ هدیه‌ای بی‌نظیر برای ارزشمندترین افراد زندگی‌تان، خلق‌شده با ظرافت و عشق.
-            </p>
-            
-            <!-- راهنمای قابلیت سفارش‌سازی رنگ و طرح -->
-            <div class="inline-block bg-[#1E293B] border border-amber-500/30 px-6 py-3 rounded-xl text-sm text-slate-300 shadow-lg">
-                ✨ امکان سفارش‌سازی اختصاصی: شما می‌توانید رنگ‌بندی و طرح دلخواه خود را برای این محصولات درخواست دهید.
+    <div class="container">
+        <!-- بخش جاکلیدی و آویز کیف -->
+        <div id="keychain-section" class="section">
+            <h2>جاکلیدی و آویز کیف</h2>
+            <div class="grid">
+                <div class="card">
+                    <!-- عکس‌های جاکلیدی که اول فرستادید -->
+                    <img src="path/to/keychain-image-1.jpg" alt="جاکلیدی">
+                    <p>جاکلیدی طرح اول</p>
+                </div>
+                <div class="card">
+                    <img src="path/to/keychain-image-2.jpg" alt="آویز کیف">
+                    <p>آویز کیف طرح دوم</p>
+                </div>
             </div>
         </div>
 
-        <!-- گرید تصاویر آپلود شده -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            
-            <!-- محصول ۱ -->
-            <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
-                <div class="overflow-hidden relative h-96">
-                    <img src="IMG_3448.jpeg" alt="آویز کیف و جاکلیدی لومیِر" class="w-full h-full object-cover">
-                </div>
-                <div class="p-8">
-                    <h3 class="font-bold text-xl mb-2 gold-accent">آویز کیف و جاکلیدی رزینی</h3>
-                    <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر، قابل سفارش با رنگ‌بندی دلخواه شما.</p>
-                    <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20آویز%20کیف%20و%20جاکلیدی%20با%20رنگ%20و%20طرح%20دلخواه%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
+        <!-- بخش گوشواره -->
+        <div id="earring-section" class="section">
+            <h2>گوشواره</h2>
+            <div class="grid">
+                <div class="card">
+                    <!-- عکس‌های گوشواره که فرستادید (قرار گرفته در انتهای بخش) -->
+                    <img src="path/to/earring-image-1.jpg" alt="گوشواره">
+                    <p>گوشواره مدل خاص</p>
                 </div>
             </div>
-
-            <!-- محصول ۲ -->
-            <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
-                <div class="overflow-hidden relative h-96">
-                    <img src="IMG_3449.jpeg" alt="آویز کیف و جاکلیدی لومیِر" class="w-full h-full object-cover">
-                </div>
-                <div class="p-8">
-                    <h3 class="font-bold text-xl mb-2 gold-accent">آویز کیف و جاکلیدی رزینی</h3>
-                    <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر، قابل سفارش با رنگ‌بندی دلخواه شما.</p>
-                    <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20آویز%20کیف%20و%20جاکلیدی%20با%20رنگ%20و%20طرح%20دلخواه%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
-                </div>
-            </div>
-
-            <!-- محصول ۳ -->
-            <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
-                <div class="overflow-hidden relative h-96">
-                    <img src="IMG_3451.jpeg" alt="آویز کیف و جاکلیدی لومیِر" class="w-full h-full object-cover">
-                </div>
-                <div class="p-8">
-                    <h3 class="font-bold text-xl mb-2 gold-accent">آویز کیف و جاکلیدی رزینی</h3>
-                    <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر، قابل سفارش با رنگ‌بندی دلخواه شما.</p>
-                    <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20آویز%20کیف%20و%20جاکلیدی%20با%20رنگ%20و%20طرح%20دلخواه%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
-                </div>
-            </div>
-
-            <!-- محصول ۴ -->
-            <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
-                <div class="overflow-hidden relative h-96">
-                    <img src="IMG_3452.jpeg" alt="آویز کیف و جاکلیدی لومیِر" class="w-full h-full object-cover">
-                </div>
-                <div class="p-8">
-                    <h3 class="font-bold text-xl mb-2 gold-accent">آویز کیف و جاکلیدی رزینی</h3>
-                    <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر، قابل سفارش با رنگ‌بندی دلخواه شما.</p>
-                    <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20آویز%20کیف%20و%20جاکلیدی%20با%20رنگ%20و%20طرح%20دلخواه%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
-                </div>
-            </div>
-
-            <!-- محصول ۵ -->
-            <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
-                <div class="overflow-hidden relative h-96">
-                    <img src="IMG_3453.jpeg" alt="آویز کیف و جاکلیدی لومیِر" class="w-full h-full object-cover">
-                </div>
-                <div class="p-8">
-                    <h3 class="font-bold text-xl mb-2 gold-accent">آویز کیف و جاکلیدی رزینی</h3>
-                    <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر، قابل سفارش با رنگ‌بندی دلخواه شما.</p>
-                    <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20آویز%20کیف%20و%20جاکلیدی%20با%20رنگ%20و%20طرح%20دلخواه%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
-                </div>
-            </div>
-
-            <!-- محصول ۶ -->
-            <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
-                <div class="overflow-hidden relative h-96">
-                    <img src="IMG_3454.jpeg" alt="آویز کیف و جاکلیدی لومیِر" class="w-full h-full object-cover">
-                </div>
-                <div class="p-8">
-                    <h3 class="font-bold text-xl mb-2 gold-accent">آویز کیف و جاکلیدی رزینی</h3>
-                    <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر، قابل سفارش با رنگ‌بندی دلخواه شما.</p>
-                    <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20آویز%20کیف%20و%20جاکلیدی%20با%20رنگ%20و%20طرح%20دلخواه%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
-                </div>
-            </div>
-
-            <!-- محصول ۷ -->
-            <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
-                <div class="overflow-hidden relative h-96">
-                    <img src="IMG_3455.jpeg" alt="آویز کیف و جاکلیدی لومیِر" class="w-full h-full object-cover">
-                </div>
-                <div class="p-8">
-                    <h3 class="font-bold text-xl mb-2 gold-accent">آویز کیف و جاکلیدی رزینی</h3>
-                    <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر، قابل سفارش با رنگ‌بندی دلخواه شما.</p>
-                    <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20آویز%20کیف%20و%20جاکلیدی%20با%20رنگ%20و%20طرح%20دلخواه%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
-                </div>
-            </div>
-
-            <!-- محصول ۸ -->
-            <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
-                <div class="overflow-hidden relative h-96">
-                    <img src="IMG_3456.jpeg" alt="آویز کیف و جاکلیدی لومیِر" class="w-full h-full object-cover">
-                </div>
-                <div class="p-8">
-                    <h3 class="font-bold text-xl mb-2 gold-accent">آویز کیف و جاکلیدی رزینی</h3>
-                    <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر، قابل سفارش با رنگ‌بندی دلخواه شما.</p>
-                    <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20آویز%20کیف%20و%20جاکلیدی%20با%20رنگ%20و%20طرح%20دلخواه%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
-                </div>
-            </div>
-
-            <!-- محصول ۹ -->
-            <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
-                <div class="overflow-hidden relative h-96">
-                    <img src="IMG_3457.jpeg" alt="آویز کیف و جاکلیدی لومیِر" class="w-full h-full object-cover">
-                </div>
-                <div class="p-8">
-                    <h3 class="font-bold text-xl mb-2 gold-accent">آویز کیف و جاکلیدی رزینی</h3>
-                    <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر، قابل سفارش با رنگ‌بندی دلخواه شما.</p>
-                    <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20آویز%20کیف%20و%20جاکلیدی%20با%20رنگ%20و%20طرح%20دلخواه%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
-                </div>
-            </div>
-
-            <!-- محصول ۱۰ -->
-            <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
-                <div class="overflow-hidden relative h-96">
-                    <img src="IMG_3458.jpeg" alt="آویز کیف و جاکلیدی لومیِر" class="w-full h-full object-cover">
-                </div>
-                <div class="p-8">
-                    <h3 class="font-bold text-xl mb-2 gold-accent">آویز کیف و جاکلیدی رزینی</h3>
-                    <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر، قابل سفارش با رنگ‌بندی دلخواه شما.</p>
-                    <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20آویز%20کیف%20و%20جاکلیدی%20با%20رنگ%20و%20طرح%20دلخواه%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
-                </div>
-            </div>
-
-            <!-- محصول ۱۱ -->
-            <div class="lux-card rounded-2xl overflow-hidden shadow-2xl transition hover:-translate-y-2 duration-300 border border-slate-700">
-                <div class="overflow-hidden relative h-96">
-                    <img src="IMG_3460.jpeg" alt="آویز کیف و جاکلیدی لومیِر" class="w-full h-full object-cover">
-                </div>
-                <div class="p-8">
-                    <h3 class="font-bold text-xl mb-2 gold-accent">آویز کیف و جاکلیدی رزینی</h3>
-                    <p class="text-slate-400 text-sm mb-6">دست‌ساز و بی‌نظیر، قابل سفارش با رنگ‌بندی دلخواه شما.</p>
-                    <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20آویز%20کیف%20و%20جاکلیدی%20با%20رنگ%20و%20طرح%20دلخواه%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
-                </div>
-            </div>
-
         </div>
+    </div>
 
-        <!-- بخش داستان کارگاه ما -->
-        <section class="mt-28 max-w-4xl mx-auto lux-card p-10 rounded-3xl border border-slate-700 shadow-2xl text-center">
-            <h3 class="text-3xl font-bold mb-6 gold-accent">داستان کارگاه ما</h3>
-            <p class="text-slate-300 leading-relaxed text-lg mb-6">
-                همه چیز از عشق به زیبایی‌های طبیعی و ماندگار کردن لحظات آغاز شد. در کارگاه ما، هر قطعه رزین تنها یک اکسسوری ساده نیست؛ بلکه روایتی است از گل‌های حفظ‌شده، ورق‌های درخشان طلا و بازی نور در میان بافت‌های شفاف اپوکسی.
-            </p>
-            <p class="text-slate-300 leading-relaxed text-lg">
-                تمامی محصولات با نهایت ظرافت، دقت و صبر به صورت دست‌ساز خلق می‌شوند و قابلیت شخصی‌سازی کامل رنگ و طرح را دارند تا شما همواره تکه‌ای از هنر خالص طبیعت را همراه خود داشته باشید.
-            </p>
-        </section>
+    <script>
+        // تابع برای نمایش خودکار بخش مربوطه بر اساس پارامتر آدرس (URL)
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
 
-        <!-- پرسش‌های متداول -->
-        <section class="mt-24 max-w-4xl mx-auto">
-            <h3 class="text-3xl font-bold mb-12 text-center gold-accent">پرسش‌های متداول</h3>
-            <div class="space-y-6">
-                <div class="lux-card p-8 rounded-2xl border border-slate-700">
-                    <h4 class="font-bold text-lg mb-2">برای حفظ طولانی‌مدت شفافیت و درخشش رزین، چه نکاتی رو باید رعایت کنیم؟</h4>
-                    <p class="text-slate-400 text-sm">از تماس مستقیم با عطر، ادکلن، شوینده‌ها و مواد شیمیایی خودداری کنید و از قرار دادن طولانی‌مدت در معرض تابش مستقیم آفتاب و آب پرهیز کنید.</p>
-                </div>
-                <div class="lux-card p-8 rounded-2xl border border-slate-700">
-                    <h4 class="font-bold text-lg mb-2">چرا محصولات رزینی لومی‌یر انتخابی عالی برای هدیه هستند؟</h4>
-                    <p class="text-slate-400 text-sm">هر قطعه به صورت کاملاً دست‌ساز، با ظرافت و عشق خلق می‌شود و به دلیل ماهیت رزین، هر محصول اثری منحصربه‌فرد و تکرارنشدنی است که حس خاص بودن را به مخاطب هدیه می‌دهد.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+        function showCategory(catName) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            
+            if (catName === 'keychain') {
+                document.getElementById('keychain-section').classList.add('active');
+            } else if (catName === 'earring') {
+                document.getElementById('earring-section').classList.add('active');
+            } else {
+                // پیش‌فرض اگر پارامتری نبود
+                document.getElementById('keychain-section').classList.add('active');
+            }
+        }
 
-    <!-- فوتر -->
-    <footer class="bg-[#0F172A] border-t border-slate-700 mt-24 py-12 text-center text-slate-500 text-sm">
-        <p>&copy; 2026 LUMIÈRE Gallery. تمامی حقوق محفوظ است.</p>
-    </footer>
+        // اجرای اولیه هنگام لود صفحه
+        window.onload = function() {
+            const currentCat = getQueryParam('cat');
+            showCategory(currentCat || 'keychain');
+        };
+    </script>
 
 </body>
 </html>
