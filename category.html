@@ -136,9 +136,54 @@
             </div>
         </section>
 
+        <!-- ۴. بخش دستبند -->
+        <section id="bracelets" class="product-section mb-28">
+            <div class="text-center mb-16 relative">
+                <h2 class="text-4xl font-bold mb-4 gold-accent">دستبند رزینی</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed mb-6">دستبندهای لوکس و شیک دست‌ساز با طراحی خاص.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="lux-card rounded-2xl overflow-hidden shadow-2xl border border-slate-700 p-8 text-center">
+                    <h3 class="font-bold text-xl mb-2 gold-accent">دستبند رزینی لومیِر</h3>
+                    <p class="text-slate-400 text-sm mb-6">طراحی و ساخت با طرح و رنگ دلخواه.</p>
+                    <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20دستبند%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ۵. بخش پابند -->
+        <section id="anklets" class="product-section mb-28">
+            <div class="text-center mb-16 relative">
+                <h2 class="text-4xl font-bold mb-4 gold-accent">پابند رزینی</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed mb-6">ظرافت و زیبایی در هر گام با پابندهای دست‌ساز لومیِر.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="lux-card rounded-2xl overflow-hidden shadow-2xl border border-slate-700 p-8 text-center">
+                    <h3 class="font-bold text-xl mb-2 gold-accent">پابند رزینی لومیِر</h3>
+                    <p class="text-slate-400 text-sm mb-6">طراحی و ساخت با طرح و رنگ دلخواه.</p>
+                    <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20پابند%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ۶. بخش سینه‌ریز -->
+        <section id="necklaces" class="product-section mb-28">
+            <div class="text-center mb-16 relative">
+                <h2 class="text-4xl font-bold mb-4 gold-accent">سینه‌ریز رزینی</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed mb-6">جلوه‌ای خیره‌کننده و سلطنتی با سینه‌ریزهای دست‌ساز رزینی.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="lux-card rounded-2xl overflow-hidden shadow-2xl border border-slate-700 p-8 text-center">
+                    <h3 class="font-bold text-xl mb-2 gold-accent">سینه‌ریز رزینی لومیِر</h3>
+                    <p class="text-slate-400 text-sm mb-6">طراحی و ساخت با طرح و رنگ دلخواه.</p>
+                    <a href="https://wa.me/989030102009?text=سلام،%20مایل%20به%20سفارش%20سینه‌ریز%20هستم." target="_blank" class="block w-full gold-bg text-white text-center py-3 rounded-full font-medium hover:bg-amber-600 transition shadow-lg">سفارش با رنگ‌بندی دلخواه</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- اسکریپت هوشمند برای نمایش دقیق همان دسته‌بندی انتخاب‌شده -->
+    <!-- اسکریپت نمایش تک‌بخش انتخاب‌شده -->
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
@@ -150,7 +195,6 @@
                     targetSection.classList.add('active');
                 }
             } else {
-                // اگر از دکمه «مشاهده تمام محصولات» وارد شده بود، همه بخش‌ها نمایش داده شوند
                 document.querySelectorAll('.product-section').forEach(sec => sec.classList.add('active'));
             }
         });
