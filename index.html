@@ -15,9 +15,7 @@
         .gold-accent { color: #C5A059; }
         .gold-bg { background-color: #C5A059; }
         .lux-card { background-color: rgba(30, 41, 59, 0.9); backdrop-filter: blur(8px); }
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
+        .dropdown:hover .dropdown-menu { display: block; }
         .floral-hero-bg {
             background: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)), 
                         url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
@@ -42,16 +40,13 @@
                         <span>فهرست دسته‌بندی‌ها</span>
                         <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <!-- لینک‌های مجزا و دقیق به بخش‌های مختلف کتگوری -->
+                    <!-- لینک‌های مجزا و دقیق به بخش‌های مختلف کتگوری با پارامتر نمایش تک‌بخش -->
                     <div class="dropdown-menu hidden absolute top-full right-1/2 translate-x-1/2 w-64 lux-card border border-slate-700 rounded-2xl shadow-2xl py-3 mt-3 z-50 text-center">
                         <a href="index.html" class="block px-4 py-2.5 bg-slate-800 text-amber-400 font-semibold transition">صفحه اصلی</a>
                         <div class="border-t border-slate-700 my-1"></div>
-                        <a href="category.html#clocks-frames" class="block px-4 py-2.5 hover:bg-slate-800 text-slate-300 hover:text-amber-400 transition">ساعت و قاب</a>
-                        <a href="category.html#earrings" class="block px-4 py-2.5 hover:bg-slate-800 text-slate-300 hover:text-amber-400 transition">گوشواره</a>
-                        <a href="category.html#bag-charms" class="block px-4 py-2.5 hover:bg-slate-800 text-slate-300 hover:text-amber-400 transition">آویز کیف و جاکلیدی</a>
-                        <a href="category.html#bracelets" class="block px-4 py-2.5 hover:bg-slate-800 text-slate-300 hover:text-amber-400 transition">دستبند</a>
-                        <a href="category.html#anklets" class="block px-4 py-2.5 hover:bg-slate-800 text-slate-300 hover:text-amber-400 transition">پابند</a>
-                        <a href="category.html#accessories" class="block px-4 py-2.5 hover:bg-slate-800 text-slate-300 hover:text-amber-400 transition">اکسسوری</a>
+                        <a href="category.html?section=clocks-frames" class="block px-4 py-2.5 hover:bg-slate-800 text-slate-300 hover:text-amber-400 transition">ساعت و قاب</a>
+                        <a href="category.html?section=earrings" class="block px-4 py-2.5 hover:bg-slate-800 text-slate-300 hover:text-amber-400 transition">گوشواره</a>
+                        <a href="category.html?section=bag-charms" class="block px-4 py-2.5 hover:bg-slate-800 text-slate-300 hover:text-amber-400 transition">آویز کیف و جاکلیدی</a>
                     </div>
                 </div>
                 <!-- گزینه درباره ما فقط در ایندکس قرار دارد -->
@@ -68,31 +63,12 @@
             <span class="inline-block text-4xl mb-3 animate-bounce">🦋 ✨ 🌸</span>
             <h2 class="text-5xl font-bold mb-6 gold-accent drop-shadow-lg">گالری هنری لومیِر</h2>
             <p class="text-slate-200 max-w-2xl mx-auto text-lg leading-relaxed mb-10 drop-shadow">
-                طراح و سازنده زیباترین اکسسوری‌ها، ساعت و قاب، گوشواره، آویزهای کیف و جاکلیدی، پابند و دستبندهای دست‌ساز با بالاترین کیفیت و طرح‌های منحصربه‌فرد.
+                طراح و سازنده زیباترین اکسسوری‌ها، ساعت و قاب، گوشواره، آویزهای کیف و جاکلیدی با بالاترین کیفیت و طرح‌های منحصربه‌فرد.
             </p>
             <div class="flex justify-center gap-4 flex-wrap">
                 <a href="category.html" class="inline-block gold-bg text-white px-8 py-4 rounded-full font-medium hover:bg-amber-600 transition shadow-2xl text-lg">
                     مشاهده تمام محصولات 🌸
                 </a>
-            </div>
-        </section>
-
-        <!-- ویژگی‌ها -->
-        <section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-            <div class="lux-card p-8 rounded-2xl shadow-xl border border-slate-700 text-center">
-                <div class="text-4xl mb-4 gold-accent">✨ 🦋</div>
-                <h4 class="font-bold text-lg mb-2 gold-accent">کاملاً دست‌ساز</h4>
-                <p class="text-slate-300 text-sm">تمامی محصولات با ظرافت و دقت بالا به صورت دست‌ساز تولید می‌شوند.</p>
-            </div>
-            <div class="lux-card p-8 rounded-2xl shadow-xl border border-slate-700 text-center">
-                <div class="text-4xl mb-4 gold-accent">💎 🌸</div>
-                <h4 class="font-bold text-lg mb-2 gold-accent">متریال باکیفیت</h4>
-                <p class="text-slate-300 text-sm">استفاده از مرغوب‌ترین متریال جهت دوام و زیبایی بیشتر.</p>
-            </div>
-            <div class="lux-card p-8 rounded-2xl shadow-xl border border-slate-700 text-center">
-                <div class="text-4xl mb-4 gold-accent">🎨 ✨</div>
-                <h4 class="font-bold text-lg mb-2 gold-accent">طرح‌های منحصربه‌فرد</h4>
-                <p class="text-slate-300 text-sm">امکان شخصی‌سازی رنگ‌بندی و طرح بر اساس سلیقه شما.</p>
             </div>
         </section>
 
@@ -102,7 +78,7 @@
                 <span>🌸</span> درباره ما و داستان کارگاه <span>🦋</span>
             </h3>
             <p class="text-slate-200 leading-relaxed">
-                در کارگاه لومیِر، ما به خلق اثر با جزئیات دقیق اهمیت می‌دهیم. تمامی محصولات در قالب طرح‌ها و رنگ‌بندی‌های دلخواه شما قابل سفارشی‌سازی هستند تا استایلی کاملاً مختص به خودتان داشته باشید. هدف ما زنده کردن طراوت طبیعت در قالب آثار ماندگار هنری است.
+                در کارگاه لومیِر، ما به خلق اثر با جزئیات دقیق اهمیت می‌دهیم. تمامی محصولات در قالب طرح‌ها و رنگ‌بندی‌های دلخواه شما قابل سفارشی‌سازی هستند تا استایلی کاملاً مختص به خودتان داشته باشید.
             </p>
         </section>
     </main>
